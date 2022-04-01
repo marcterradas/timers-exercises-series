@@ -1,0 +1,24 @@
+{
+  "name": "timers-exercises-series",
+  "version": "1.0.0",
+  "description": "Timer for exercises series",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcterradas/timers-exercises-series.git"
+  },
+  "keywords": [
+    "timers",
+    "exercises",
+    "series"
+  ],
+  "author": "Marc Terradas Zapata",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/marcterradas/timers-exercises-series/issues"
+  },
+  "homepage": "https://github.com/marcterradas/timers-exercises-series#readme"
+}
