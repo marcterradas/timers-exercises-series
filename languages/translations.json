@@ -1,0 +1,19 @@
+{
+    "resources": {
+        "en": {
+            "translation": {
+                "home": "Home"
+            }
+        },
+        "es": {
+            "translation": {
+                "home": "Inicio"
+            }
+        },
+        "cat": {
+            "translation": {
+                "home": "Inici"
+            }
+        }
+    }
+}
