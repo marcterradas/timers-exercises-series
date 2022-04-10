@@ -14,9 +14,9 @@ const changeLanguage = ( language ) => {
     localStorage.setItem('language', language)
 }
 
-const defaultLanguage = 'en'
+const defaultLanguage = 'es'
 
-translations.fallbackLng = localStorage.getItem('language') || defaultLanguage
+translations.fallbackLng = defaultLanguage
 
 i18n.use(initReactI18next).init(translations)
 
