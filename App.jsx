@@ -1,13 +1,13 @@
-import React from 'react';
-import { NavigationContainer } from '@react-navigation/native'
-import Footer from './components/Footer'
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <NavigationContainer>
-        <Footer />
+      <Footer />
     </NavigationContainer>
-  )
+  );
 }
 
-export default App
+export default App;
