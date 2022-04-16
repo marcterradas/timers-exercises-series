@@ -1,9 +1,8 @@
 import { View, Text } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native'
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import { useTranslation } from 'react-i18next'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
-import './languages/i18n'
+const Tab = createBottomTabNavigator();
 
 function HomeScreen() {
   return (
@@ -13,15 +12,27 @@ function HomeScreen() {
   )
 }
 
-const Stack = createNativeStackNavigator()
+function SettingsScreen() {
+    return (
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text>Settings Screen ...</Text>
+        </View>
+    )
+}
+
+function MyTabs() {
+    return (
+      <Tab.Navigator>
+        <Tab.Screen name="Home" component={HomeScreen} />
+        <Tab.Screen name="Settings" component={SettingsScreen} />
+      </Tab.Navigator>
+    );
+  }
 
 function App() {
-    const { t } = useTranslation()
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name={t('home')} component={HomeScreen} />
-      </Stack.Navigator>
+        <MyTabs />
     </NavigationContainer>
   )
 }
