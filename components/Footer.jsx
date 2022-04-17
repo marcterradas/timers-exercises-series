@@ -31,17 +31,17 @@ function Footer() {
           switch (route.name) {
             case "Home":
               iconName = focused
-                ? "information-circle"
-                : "information-circle-outline";
+                ? "document"
+                : "document-outline"
               break;
             case "Settings":
-              iconName = focused ? "settings" : "settings-outline";
+              iconName = focused ? "barbell" : "barbell-outline";
               break;
           }
 
           return <Ionicons name={iconName} size={size} color={color} />;
         },
-        tabBarActiveTintColor: "tomato",
+        tabBarActiveTintColor: "black",
         tabBarInactiveTintColor: "gray",
       })}
     >
