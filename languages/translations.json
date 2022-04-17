@@ -2,21 +2,21 @@
   "resources": {
     "en": {
       "translation": {
-        "home": "Home",
+        "workout": "Workouts",
         "timer": "Timer",
         "settings": "Settings"
       }
     },
     "es": {
       "translation": {
-        "home": "Inicio",
+        "workout": "Entrenamientos",
         "timer": "Temporizador",
         "settings": "Configuración"
       }
     },
     "cat": {
       "translation": {
-        "home": "Inici",
+        "workout": "Entrenaments",
         "timer": "Temporitzador",
         "settings": "Configuració"
       }
