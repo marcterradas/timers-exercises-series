@@ -1,19 +1,25 @@
 {
-    "resources": {
-        "en": {
-            "translation": {
-                "home": "Home"
-            }
-        },
-        "es": {
-            "translation": {
-                "home": "Inicio"
-            }
-        },
-        "cat": {
-            "translation": {
-                "home": "Inici"
-            }
-        }
+  "resources": {
+    "en": {
+      "translation": {
+        "home": "Home",
+        "timer": "Timer",
+        "settings": "Settings"
+      }
+    },
+    "es": {
+      "translation": {
+        "home": "Inicio",
+        "timer": "Temporizador",
+        "settings": "Configuración"
+      }
+    },
+    "cat": {
+      "translation": {
+        "home": "Inici",
+        "timer": "Temporitzador",
+        "settings": "Configuració"
+      }
     }
+  }
 }
