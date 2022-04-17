@@ -5,23 +5,31 @@ import { View, Text } from "react-native";
 
 const Tab = createBottomTabNavigator();
 
-function HomeScreen() {
+const HomeScreen = () => {
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <Text>Home Screen ...</Text>
     </View>
   );
-}
+};
 
-function SettingsScreen() {
+const TimerScreen = () => {
+  return (
+    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <Text>Timer Screen ...</Text>
+    </View>
+  );
+};
+
+const SettingsScreen = () => {
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <Text>Settings Screen ...</Text>
     </View>
   );
-}
+};
 
-function Footer() {
+const Footer = () => {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
@@ -30,10 +38,13 @@ function Footer() {
 
           switch (route.name) {
             case "Home":
-              iconName = focused ? "document" : "document-outline";
+              iconName = focused ? "list" : "list-outline";
+              break;
+            case "Timer":
+              iconName = focused ? "timer" : "timer-outline";
               break;
             case "Settings":
-              iconName = focused ? "barbell" : "barbell-outline";
+              iconName = focused ? "settings" : "settings-outline";
               break;
           }
 
@@ -44,9 +55,10 @@ function Footer() {
       })}
     >
       <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Timer" component={TimerScreen} />
       <Tab.Screen name="Settings" component={SettingsScreen} />
     </Tab.Navigator>
   );
-}
+};
 
 export default Footer;
