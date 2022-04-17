@@ -1,6 +1,7 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Ionicons from "react-native-vector-icons/Ionicons";
+import { useTranslation } from "react-i18next";
 
 import WorkoutScreen from "../pages/Workout";
 import TimerScreen from "../pages/Timer";
@@ -9,6 +10,8 @@ import SettingsScreen from "../pages/Settings";
 const Tab = createBottomTabNavigator();
 
 const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
@@ -33,9 +36,21 @@ const Footer = () => {
         tabBarInactiveTintColor: "gray",
       })}
     >
-      <Tab.Screen name="Workout" component={WorkoutScreen} />
-      <Tab.Screen name="Timer" component={TimerScreen} />
-      <Tab.Screen name="Settings" component={SettingsScreen} />
+      <Tab.Screen
+        name="Workout"
+        component={WorkoutScreen}
+        options={{ tabBarLabel: t("workout") }}
+      />
+      <Tab.Screen
+        name="Timer"
+        component={TimerScreen}
+        options={{ tabBarLabel: t("timer") }}
+      />
+      <Tab.Screen
+        name="Settings"
+        component={SettingsScreen}
+        options={{ tabBarLabel: t("settings") }}
+      />
     </Tab.Navigator>
   );
 };
