@@ -30,9 +30,7 @@ function Footer() {
 
           switch (route.name) {
             case "Home":
-              iconName = focused
-                ? "document"
-                : "document-outline"
+              iconName = focused ? "document" : "document-outline";
               break;
             case "Settings":
               iconName = focused ? "barbell" : "barbell-outline";
