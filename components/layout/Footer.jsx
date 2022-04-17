@@ -1,33 +1,12 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Ionicons from "react-native-vector-icons/Ionicons";
-import { View, Text } from "react-native";
+
+import WorkoutScreen from "../pages/Workout";
+import TimerScreen from "../pages/Timer";
+import SettingsScreen from "../pages/Settings";
 
 const Tab = createBottomTabNavigator();
-
-const HomeScreen = () => {
-  return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>Home Screen ...</Text>
-    </View>
-  );
-};
-
-const TimerScreen = () => {
-  return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>Timer Screen ...</Text>
-    </View>
-  );
-};
-
-const SettingsScreen = () => {
-  return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>Settings Screen ...</Text>
-    </View>
-  );
-};
 
 const Footer = () => {
   return (
@@ -37,7 +16,7 @@ const Footer = () => {
           let iconName;
 
           switch (route.name) {
-            case "Home":
+            case "Workout":
               iconName = focused ? "list" : "list-outline";
               break;
             case "Timer":
@@ -54,7 +33,7 @@ const Footer = () => {
         tabBarInactiveTintColor: "gray",
       })}
     >
-      <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Workout" component={WorkoutScreen} />
       <Tab.Screen name="Timer" component={TimerScreen} />
       <Tab.Screen name="Settings" component={SettingsScreen} />
     </Tab.Navigator>
