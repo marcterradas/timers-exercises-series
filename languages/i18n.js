@@ -29,8 +29,3 @@ i18n.use(initReactI18next).init({
     useSuspense: false,
   },
 });
-
-// export default {
-//   languages: languages,
-//   changeLanguage: changeLanguage,
-// };
