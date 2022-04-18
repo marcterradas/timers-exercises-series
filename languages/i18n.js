@@ -3,13 +3,13 @@ import { initReactI18next } from "react-i18next";
 
 import translations from "./translations.json";
 
-const languages = [
+export const languages = [
   { key: "es", value: "Castellà" },
   { key: "cat", value: "Català" },
   { key: "en", value: "English" },
 ];
 
-const changeLanguage = (language) => {
+export const changeLanguage = (language) => {
   i18n.changeLanguage(language);
 };
 
@@ -30,7 +30,7 @@ i18n.use(initReactI18next).init({
   },
 });
 
-export default {
-  languages,
-  changeLanguage,
-};
+// export default {
+//   languages: languages,
+//   changeLanguage: changeLanguage,
+// };

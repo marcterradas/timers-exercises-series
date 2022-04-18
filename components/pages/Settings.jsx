@@ -1,5 +1,8 @@
 import React from "react";
 import { View, Text } from "react-native";
+import { Picker } from "@react-native-picker/picker";
+
+import { languages, changeLanguage } from "../../languages/i18n";
 
 const SettingsScreen = () => {
   return (
