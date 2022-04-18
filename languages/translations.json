@@ -4,21 +4,24 @@
       "translation": {
         "workout": "Workouts",
         "timer": "Timer",
-        "settings": "Settings"
+        "settings": "Settings",
+        "change_language": "Change Language"
       }
     },
     "es": {
       "translation": {
         "workout": "Entrenamientos",
         "timer": "Temporizador",
-        "settings": "Configuración"
+        "settings": "Configuración",
+        "change_language": "Cambiar Idioma"
       }
     },
     "cat": {
       "translation": {
         "workout": "Entrenaments",
         "timer": "Temporitzador",
-        "settings": "Configuració"
+        "settings": "Configuració",
+        "change_language": "Canviar idioma"
       }
     }
   }
