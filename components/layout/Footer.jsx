@@ -19,13 +19,13 @@ const Footer = () => {
           let iconName;
 
           switch (route.name) {
-            case "Workout":
+            case "workout":
               iconName = focused ? "list" : "list-outline";
               break;
-            case "Timer":
+            case "timer":
               iconName = focused ? "timer" : "timer-outline";
               break;
-            case "Settings":
+            case "settings":
               iconName = focused ? "settings" : "settings-outline";
               break;
           }
@@ -37,17 +37,17 @@ const Footer = () => {
       })}
     >
       <Tab.Screen
-        name="Workout"
+        name="workout"
         component={WorkoutScreen}
         options={{ tabBarLabel: t("workout") }}
       />
       <Tab.Screen
-        name="Timer"
+        name="timer"
         component={TimerScreen}
         options={{ tabBarLabel: t("timer") }}
       />
       <Tab.Screen
-        name="Settings"
+        name="settings"
         component={SettingsScreen}
         options={{ tabBarLabel: t("settings") }}
       />
