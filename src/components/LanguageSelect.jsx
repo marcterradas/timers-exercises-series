@@ -23,6 +23,7 @@ const LanguageSelect = () => {
       backgroundColor: "#fff",
     },
   };
+
   function updateLanguage(lanugage) {
     changeLanguage(lanugage);
     setSelectedLanguage(lanugage);
