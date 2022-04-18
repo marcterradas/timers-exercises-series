@@ -13,7 +13,7 @@ export const changeLanguage = (language) => {
   i18n.changeLanguage(language);
 };
 
-const defaultLanguage = "en";
+export const defaultLanguage = "en";
 
 translations.fallbackLng = defaultLanguage;
 

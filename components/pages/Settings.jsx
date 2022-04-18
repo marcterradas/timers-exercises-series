@@ -1,14 +1,39 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { useState } from "react";
 import { Picker } from "@react-native-picker/picker";
 
-import { languages, changeLanguage } from "../../languages/i18n";
+import {
+  languages,
+  changeLanguage,
+  defaultLanguage,
+} from "../../languages/i18n";
 
 const SettingsScreen = () => {
+  const [selectedLanguage, setSelectedLanguage] = useState(defaultLanguage);
+  const languagesElements = languages.map((language) => {
+    return (
+      <Picker.Item
+        key={language.key}
+        label={language.value}
+        value={language.key}
+      />
+    );
+  });
+
+  function updateLanguage(lanugage, key) {
+    changeLanguage(lanugage);
+    setSelectedLanguage(lanugage);
+  }
+
   return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>Settings Screen ...</Text>
-    </View>
+    <Picker
+      selectedValue={selectedLanguage}
+      onValueChange={(itemValue, itemIndex) =>
+        updateLanguage(itemValue, itemIndex)
+      }
+    >
+      {languagesElements}
+    </Picker>
   );
 };
 
