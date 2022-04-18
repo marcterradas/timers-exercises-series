@@ -1,7 +1,7 @@
-import React from "react";
-import { useState } from "react";
+import { React, useState } from "react";
 import { Picker } from "@react-native-picker/picker";
-
+import { View, Text } from "react-native";
+import { useTranslation } from "react-i18next";
 import {
   languages,
   changeLanguage,
@@ -19,21 +19,29 @@ const SettingsScreen = () => {
       />
     );
   });
+  const { t } = useTranslation();
 
-  function updateLanguage(lanugage, key) {
+  const styles = {
+    container: {
+      padding: 10,
+    },
+  };
+
+  function updateLanguage(lanugage) {
     changeLanguage(lanugage);
     setSelectedLanguage(lanugage);
   }
 
   return (
-    <Picker
-      selectedValue={selectedLanguage}
-      onValueChange={(itemValue, itemIndex) =>
-        updateLanguage(itemValue, itemIndex)
-      }
-    >
-      {languagesElements}
-    </Picker>
+    <View style={styles.container}>
+      <Text>{t("change_language")}</Text>
+      <Picker
+        selectedValue={selectedLanguage}
+        onValueChange={(itemValue) => updateLanguage(itemValue)}
+      >
+        {languagesElements}
+      </Picker>
+    </View>
   );
 };
 
