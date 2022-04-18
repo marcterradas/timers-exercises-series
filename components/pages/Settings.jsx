@@ -25,6 +25,10 @@ const SettingsScreen = () => {
     container: {
       padding: 10,
     },
+    select: {
+      marginTop: 10,
+      backgroundColor: "#fff",
+    },
   };
 
   function updateLanguage(lanugage) {
@@ -36,6 +40,7 @@ const SettingsScreen = () => {
     <View style={styles.container}>
       <Text>{t("change_language")}</Text>
       <Picker
+        style={styles.select}
         selectedValue={selectedLanguage}
         onValueChange={(itemValue) => updateLanguage(itemValue)}
       >
