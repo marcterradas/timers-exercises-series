@@ -2,8 +2,8 @@ import { React, useState } from "react";
 import { Picker } from "@react-native-picker/picker";
 import {
   languages,
-  changeLanguage,
   defaultLanguage,
+  changeLanguage,
 } from "../../languages/i18n";
 
 const LanguageSelect = () => {
@@ -25,8 +25,8 @@ const LanguageSelect = () => {
   };
 
   function updateLanguage(lanugage) {
-    changeLanguage(lanugage);
     setSelectedLanguage(lanugage);
+    changeLanguage(lanugage);
   }
 
   return (
