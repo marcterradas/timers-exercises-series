@@ -1,5 +1,6 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import translations from "./translations.json";
 
@@ -9,9 +10,20 @@ export const languages = [
   { key: "en", value: "English" },
 ];
 
-export const changeLanguage = (language) => {
+export function changeLanguage(language) {
   i18n.changeLanguage(language);
-};
+  AsyncStorage.setItem("language", language);
+}
+
+export async function getLanguage() {
+  try {
+    const language = await AsyncStorage.getItem("language");
+    return language;
+  } catch (error) {
+    console.error(error);
+    return false;
+  }
+}
 
 export const defaultLanguage = "en";
 
