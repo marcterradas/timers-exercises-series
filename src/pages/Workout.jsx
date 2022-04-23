@@ -3,15 +3,15 @@ import { View, Text } from "react-native";
 import ActionButton from "react-native-action-button";
 
 const WorkoutScreen = () => {
+
+  const createWorkout = () => {
+    console.log("create workout");
+  };
+
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <Text>Workout Screen ...</Text>
-      <ActionButton
-        buttonColor="rgba(231,76,60,1)"
-        onPress={() => {
-          console.log("hi");
-        }}
-      />
+      <ActionButton buttonColor="black" onPress={createWorkout} />
     </View>
   );
 };
