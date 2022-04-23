@@ -1,7 +1,9 @@
 import { React, useState } from "react";
-import { View, Text } from "react-native";
+import { View } from "react-native";
 import ActionButton from "react-native-action-button";
 import Icon from "react-native-vector-icons/Ionicons";
+import WorkoutList from "../components/WorkoutList";
+import WorkoutForm from "../components/WorkoutForm";
 
 const WorkoutScreen = () => {
   const addButton = (
@@ -17,20 +19,21 @@ const WorkoutScreen = () => {
   );
 
   const [button, setButton] = useState(addButton);
+  const [page, setPage] = useState(WorkoutList);
 
   function createWorkout() {
-    console.log("Create Workout");
     setButton(returnButton);
+    setPage(WorkoutForm);
   }
 
   function returnToHome() {
-    console.log("Return to Home");
     setButton(addButton);
+    setPage(WorkoutList);
   }
 
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>Workout Screen ...</Text>
+      {page}
       {button}
     </View>
   );
