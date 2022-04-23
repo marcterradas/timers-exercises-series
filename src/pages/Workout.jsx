@@ -1,21 +1,37 @@
 import { React, useState } from "react";
 import { View, Text } from "react-native";
 import ActionButton from "react-native-action-button";
+import Icon from "react-native-vector-icons/Ionicons";
 
 const WorkoutScreen = () => {
-  const actionButtonTemplate = (
-    <ActionButton buttonColor="black" onPress={createWorkout} />
+  const addButton = (
+    <ActionButton buttonColor="black" onPress={createWorkout}>
+      <Icon name="add-outline"></Icon>
+    </ActionButton>
   );
-  const [actionButton, setShowActionButton] = useState(actionButtonTemplate);
+
+  const returnButton = (
+    <ActionButton buttonColor="black" onPress={returnToHome}>
+      <Icon name="close-outline"></Icon>
+    </ActionButton>
+  );
+
+  const [button, setButton] = useState(addButton);
 
   function createWorkout() {
-    // setShowActionButton(false);
+    console.log("Create Workout");
+    setButton(returnButton);
+  }
+
+  function returnToHome() {
+    console.log("Return to Home");
+    setButton(addButton);
   }
 
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <Text>Workout Screen ...</Text>
-      {actionButton}
+      {button}
     </View>
   );
 };
