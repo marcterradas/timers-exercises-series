@@ -4,8 +4,11 @@ import ActionButton from "react-native-action-button";
 import Icon from "react-native-vector-icons/Ionicons";
 import WorkoutList from "../components/WorkoutList";
 import WorkoutForm from "../components/WorkoutForm";
+import { useTranslation } from "react-i18next";
 
 const WorkoutScreen = () => {
+  const { t } = useTranslation();
+
   const addButton = (
     <ActionButton buttonColor="black" onPress={createWorkout}>
       <Icon name="add-outline"></Icon>
@@ -23,12 +26,12 @@ const WorkoutScreen = () => {
 
   function createWorkout() {
     setButton(returnButton);
-    setPage(WorkoutForm);
+    setPage(WorkoutForm(t));
   }
 
   function returnToHome() {
     setButton(addButton);
-    setPage(WorkoutList);
+    setPage(WorkoutList(t));
   }
 
   return (

@@ -1,9 +1,8 @@
 import React from "react";
 import { Text } from "react-native";
 
-const WorkoutForm = () => {
-  console.log("WorkoutForm");
-  return <Text>Workout Form ...</Text>;
+const WorkoutForm = (t) => {
+  return <Text>{t("new_workout")}</Text>;
 };
 
 export default WorkoutForm;

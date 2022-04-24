@@ -1,8 +1,7 @@
 import React from "react";
 import { Text } from "react-native";
 
-const WorkoutList = () => {
-  console.log("WorkoutList");
+const WorkoutList = (t) => {
   return <Text>Workout List ...</Text>;
 };
 
