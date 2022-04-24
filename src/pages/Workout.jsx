@@ -7,8 +7,6 @@ import WorkoutForm from "../components/WorkoutForm";
 import { useTranslation } from "react-i18next";
 
 const WorkoutScreen = () => {
-  const { t } = useTranslation();
-
   const addButton = (
     <ActionButton buttonColor="black" onPress={createWorkout}>
       <Icon name="add-outline"></Icon>
@@ -21,8 +19,9 @@ const WorkoutScreen = () => {
     </ActionButton>
   );
 
+  const { t } = useTranslation();
   const [button, setButton] = useState(addButton);
-  const [page, setPage] = useState(WorkoutList);
+  const [page, setPage] = useState(WorkoutList(t));
 
   function createWorkout() {
     setButton(returnButton);
