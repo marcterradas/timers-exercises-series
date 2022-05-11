@@ -1,8 +1,18 @@
 import React from "react";
-import { Text } from "react-native";
+import { View, Text } from "react-native";
 
 const WorkoutList = (t) => {
-  return <Text>Workout List ...</Text>;
+  const styles = {
+    container: {
+      padding: 10,
+    },
+  };
+
+  return (
+    <View style={styles.container}>
+      <Text>{t("workout_list")}</Text>
+    </View>
+  );
 };
 
 export default WorkoutList;
