@@ -11,6 +11,11 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
   },
+  form: {
+    flex: 1,
+    alignSelf: "stretch",
+    backgroundColor: "#ccc",
+  },
 });
 
 export default styles;

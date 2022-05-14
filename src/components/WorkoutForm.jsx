@@ -4,7 +4,7 @@ import styles from "../styles/workout.styles";
 
 const WorkoutForm = (t) => {
   return (
-    <View style={styles.container}>
+    <View style={styles.form}>
       <Text>{t("new_workout")}</Text>
       <TextInput style={styles.input}></TextInput>
     </View>
