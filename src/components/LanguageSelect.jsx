@@ -5,6 +5,7 @@ import {
   defaultLanguage,
   changeLanguage,
 } from "../../languages/i18n";
+import styles from "../styles/settings.styles";
 
 const LanguageSelect = () => {
   const [selectedLanguage, setSelectedLanguage] = useState(defaultLanguage);
@@ -17,12 +18,6 @@ const LanguageSelect = () => {
       />
     );
   });
-  const styles = {
-    select: {
-      marginTop: 10,
-      backgroundColor: "#fff",
-    },
-  };
 
   function updateLanguage(lanugage) {
     setSelectedLanguage(lanugage);
