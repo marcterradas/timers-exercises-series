@@ -10,7 +10,7 @@ const WorkoutForm = (t) => {
 
   return (
     <View style={styles.container}>
-      <Text>{t("workout_list")}</Text>
+      <Text>{t("new_workout")}</Text>
     </View>
   );
 };

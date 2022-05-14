@@ -6,7 +6,8 @@
         "timer": "Timer",
         "settings": "Settings",
         "change_language": "Change Language",
-        "new_workout": "New workout"
+        "new_workout": "New workout",
+        "workout_list": "Workout list"
       }
     },
     "es": {
@@ -15,7 +16,8 @@
         "timer": "Temporizador",
         "settings": "Configuración",
         "change_language": "Cambiar Idioma",
-        "new_workout": "Nuevo entrenamiento"
+        "new_workout": "Nuevo entrenamiento",
+        "workout_list": "Lista de entrenamientos"
       }
     },
     "cat": {
@@ -24,7 +26,8 @@
         "timer": "Temporitzador",
         "settings": "Configuració",
         "change_language": "Canviar idioma",
-        "new_workout": "Nou entrenament"
+        "new_workout": "Nou entrenament",
+        "workout_list": "Llista d'entrenaments"
       }
     }
   }
