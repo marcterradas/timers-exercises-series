@@ -5,6 +5,7 @@ import Icon from "react-native-vector-icons/Ionicons";
 import WorkoutList from "../components/WorkoutList";
 import WorkoutForm from "../components/WorkoutForm";
 import { useTranslation } from "react-i18next";
+import styles from "../styles/workout.styles";
 
 const WorkoutScreen = () => {
   const addButton = (
@@ -34,7 +35,7 @@ const WorkoutScreen = () => {
   }
 
   return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+    <View style={styles.container}>
       {page}
       {button}
     </View>
