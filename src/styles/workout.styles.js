@@ -6,6 +6,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  title: {
+    fontWeight: "bold",
+  },
   input: {
     height: 40,
     borderWidth: 1,
