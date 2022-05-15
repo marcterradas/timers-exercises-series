@@ -8,7 +8,8 @@
         "change_language": "Change Language",
         "new_workout": "New workout",
         "workout_list": "Workout list",
-        "workout_name": "Workout name"
+        "workout_name": "Workout name",
+        "save": "Save"
       }
     },
     "es": {
@@ -19,7 +20,8 @@
         "change_language": "Cambiar Idioma",
         "new_workout": "Nuevo entrenamiento",
         "workout_list": "Lista de entrenamientos",
-        "workout_name": "Nombre del entrenamiento"
+        "workout_name": "Nombre del entrenamiento",
+        "save": "Guardar"
       }
     },
     "cat": {
@@ -30,7 +32,8 @@
         "change_language": "Canviar idioma",
         "new_workout": "Nou entrenament",
         "workout_list": "Llista d'entrenaments",
-        "workout_name": "Nom de l'entrenament"
+        "workout_name": "Nom de l'entrenament",
+        "save": "Guardar"
       }
     }
   }
