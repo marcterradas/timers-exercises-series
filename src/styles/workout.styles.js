@@ -10,11 +10,13 @@ const styles = StyleSheet.create({
     height: 40,
     borderWidth: 1,
     padding: 10,
+    borderRadius: 4,
+    borderColor: "#ccc",
   },
   form: {
     flex: 1,
     alignSelf: "stretch",
-    backgroundColor: "#ccc",
+    padding: 10,
   },
 });
 

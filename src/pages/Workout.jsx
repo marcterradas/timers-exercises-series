@@ -3,8 +3,8 @@ import { View } from "react-native";
 import ActionButton from "react-native-action-button";
 import Icon from "react-native-vector-icons/Ionicons";
 import WorkoutList from "../components/WorkoutList";
-import WorkoutForm from "../components/WorkoutForm";
 import { useTranslation } from "react-i18next";
+import WorkoutForm from "../components/WorkoutForm";
 import styles from "../styles/workout.styles";
 
 const WorkoutScreen = () => {
