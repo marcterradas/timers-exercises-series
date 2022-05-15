@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
   title: {
     fontWeight: "bold",
     fontSize: 20,
-    marginBottom: 10,
+    marginBottom: 20,
   },
   input: {
     height: 40,
