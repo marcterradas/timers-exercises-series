@@ -24,6 +24,12 @@ const styles = StyleSheet.create({
     alignSelf: "stretch",
     padding: 10,
   },
+  button: {
+    height: 40,
+    borderRadius: 4,
+    borderWidth: 1,
+    borderColor: "#ccc",
+  },
 });
 
 export default styles;
