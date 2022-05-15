@@ -8,6 +8,8 @@ const styles = StyleSheet.create({
   },
   title: {
     fontWeight: "bold",
+    fontSize: 20,
+    marginBottom: 10,
   },
   input: {
     height: 40,
@@ -15,6 +17,7 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 4,
     borderColor: "#ccc",
+    backgroundColor: "#fff",
   },
   form: {
     flex: 1,
