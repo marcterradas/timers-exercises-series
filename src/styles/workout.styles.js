@@ -30,6 +30,9 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "#ccc",
   },
+  actionContainer: {
+    marginTop: 20,
+  },
 });
 
 export default styles;

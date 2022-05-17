@@ -9,15 +9,21 @@ const WorkoutForm = (t) => {
 
   return (
     <View style={styles.form}>
-      <Text style={styles.title}>{t("new_workout")}</Text>
-      <Text>{t("workout_name")}</Text>
-      <TextInput style={styles.input}></TextInput>
-      <Button
-        onPress={saveWorkout}
-        style={styles.button}
-        title={t("save")}
-        accessibilityLabel={t("save")}
-      ></Button>
+      <View>
+        <Text style={styles.title}>{t("new_workout")}</Text>
+      </View>
+      <View>
+        <Text>{t("workout_name")}</Text>
+        <TextInput style={styles.input}></TextInput>
+      </View>
+      <View style={styles.actionContainer}>
+        <Button
+          onPress={saveWorkout}
+          style={styles.button}
+          title={t("save")}
+          accessibilityLabel={t("save")}
+        ></Button>
+      </View>
     </View>
   );
 };
