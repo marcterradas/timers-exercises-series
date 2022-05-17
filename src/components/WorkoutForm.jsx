@@ -1,11 +1,11 @@
-import React from "react";
+import { React, useState } from "react";
 import { View, Text, TextInput, Button } from "react-native";
+
 import styles from "../styles/workout.styles";
+import { saveWorkout } from "../logic/workout";
 
 const WorkoutForm = (t) => {
-  function saveWorkout() {
-    console.log("save workout ...");
-  }
+  const [title, setTitle] = useState("");
 
   return (
     <View style={styles.form}>
@@ -14,11 +14,15 @@ const WorkoutForm = (t) => {
       </View>
       <View>
         <Text>{t("workout_name")}</Text>
-        <TextInput style={styles.input}></TextInput>
+        <TextInput
+          style={styles.input}
+          onChangeText={setTitle}
+          value={title}
+        ></TextInput>
       </View>
       <View style={styles.actionContainer}>
         <Button
-          onPress={saveWorkout}
+          onPress={saveWorkout(title)}
           style={styles.button}
           title={t("save")}
           accessibilityLabel={t("save")}
