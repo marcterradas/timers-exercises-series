@@ -3,7 +3,6 @@ import { View } from "react-native";
 import ActionButton from "react-native-action-button";
 import Icon from "react-native-vector-icons/Ionicons";
 import WorkoutList from "../components/WorkoutList";
-import { useTranslation } from "react-i18next";
 import WorkoutForm from "../components/WorkoutForm";
 import styles from "../styles/workout.styles";
 
@@ -20,23 +19,22 @@ const WorkoutScreen = () => {
     </ActionButton>
   );
 
-  const { t } = useTranslation();
   const [button, setButton] = useState(addButton);
-  const [page, setPage] = useState(WorkoutList(t));
+  const [page, setPage] = useState("list");
 
   function createWorkout() {
     setButton(returnButton);
-    setPage(WorkoutForm(t));
+    setPage("form");
   }
 
   function returnToHome() {
     setButton(addButton);
-    setPage(WorkoutList(t));
+    setPage("list");
   }
 
   return (
     <View style={styles.container}>
-      {page}
+      {page == "list" ? <WorkoutList /> : <WorkoutForm />}
       {button}
     </View>
   );

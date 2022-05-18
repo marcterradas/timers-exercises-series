@@ -1,11 +1,12 @@
-import { React, useState } from "react";
+import { React } from "react";
 import { View, Text, TextInput, Button } from "react-native";
+import { useTranslation } from "react-i18next";
 
 import styles from "../styles/workout.styles";
 import { saveWorkout } from "../logic/workout";
 
-const WorkoutForm = (t) => {
-  const [title, setTitle] = useState("");
+const WorkoutForm = () => {
+  const { t } = useTranslation();
 
   return (
     <View style={styles.form}>
@@ -14,15 +15,11 @@ const WorkoutForm = (t) => {
       </View>
       <View>
         <Text>{t("workout_name")}</Text>
-        <TextInput
-          style={styles.input}
-          onChangeText={setTitle}
-          value={title}
-        ></TextInput>
+        <TextInput style={styles.input}></TextInput>
       </View>
       <View style={styles.actionContainer}>
         <Button
-          onPress={saveWorkout(title)}
+          onPress={saveWorkout()}
           style={styles.button}
           title={t("save")}
           accessibilityLabel={t("save")}
