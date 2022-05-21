@@ -11,6 +11,9 @@ const Tab = createBottomTabNavigator();
 
 const Footer = () => {
   const { t } = useTranslation();
+  let workout = t("workout");
+  let timer = t("timer");
+  let settings = t("settings");
 
   return (
     <Tab.Navigator
@@ -19,13 +22,13 @@ const Footer = () => {
           let iconName;
 
           switch (route.name) {
-            case "workout":
+            case workout:
               iconName = focused ? "list" : "list-outline";
               break;
-            case "timer":
+            case timer:
               iconName = focused ? "timer" : "timer-outline";
               break;
-            case "settings":
+            case settings:
               iconName = focused ? "settings" : "settings-outline";
               break;
           }
@@ -37,17 +40,17 @@ const Footer = () => {
       })}
     >
       <Tab.Screen
-        name="workout"
+        name={workout}
         component={WorkoutScreen}
         options={{ tabBarLabel: t("workout") }}
       />
       <Tab.Screen
-        name="timer"
+        name={timer}
         component={TimerScreen}
         options={{ tabBarLabel: t("timer") }}
       />
       <Tab.Screen
-        name="settings"
+        name={settings}
         component={SettingsScreen}
         options={{ tabBarLabel: t("settings") }}
       />
