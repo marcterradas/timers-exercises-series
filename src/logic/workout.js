@@ -1,3 +1,3 @@
-export function saveWorkout(title) {
-  console.log(title);
+export function saveWorkout(workout) {
+  console.log(workout.title);
 }

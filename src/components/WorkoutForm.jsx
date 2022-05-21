@@ -24,7 +24,9 @@ const WorkoutForm = () => {
       </View>
       <View style={styles.actionContainer}>
         <Button
-          onPress={saveWorkout(title)}
+          onPress={() => {
+            saveWorkout({ title: title });
+          }}
           style={styles.button}
           title={t("save")}
           accessibilityLabel={t("save")}
