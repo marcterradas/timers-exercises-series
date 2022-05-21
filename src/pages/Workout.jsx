@@ -1,41 +1,32 @@
 import { React, useState } from "react";
-import { View } from "react-native";
-import ActionButton from "react-native-action-button";
-import Icon from "react-native-vector-icons/Ionicons";
+import { View, ScrollView, Button } from "react-native";
 import WorkoutList from "../components/WorkoutList";
 import WorkoutForm from "../components/WorkoutForm";
 import styles from "../styles/workout.styles";
+import { t } from "i18next";
 
 const WorkoutScreen = () => {
-  const addButton = (
-    <ActionButton buttonColor="black" onPress={createWorkout}>
-      <Icon name="add-outline"></Icon>
-    </ActionButton>
-  );
-
-  const returnButton = (
-    <ActionButton buttonColor="black" onPress={returnToHome}>
-      <Icon name="close-outline"></Icon>
-    </ActionButton>
-  );
-
-  const [button, setButton] = useState(addButton);
   const [page, setPage] = useState("list");
 
-  function createWorkout() {
-    setButton(returnButton);
-    setPage("form");
-  }
-
-  function returnToHome() {
-    setButton(addButton);
-    setPage("list");
+  function changePage() {
+    setPage(page === "list" ? "form" : "list");
   }
 
   return (
     <View style={styles.container}>
-      {page == "list" ? <WorkoutList /> : <WorkoutForm />}
-      {button}
+      <ScrollView>
+        {page == "list" ? <WorkoutList /> : <WorkoutForm />}
+      </ScrollView>
+      <View style={styles.actionContainer}>
+        <Button
+          onPress={() => {
+            changePage();
+          }}
+          style={styles.button}
+          title={t("change_page")}
+          accessibilityLabel={t("change_page")}
+        ></Button>
+      </View>
     </View>
   );
 };

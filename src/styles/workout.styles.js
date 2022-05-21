@@ -5,6 +5,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+    alignSelf: "stretch",
   },
   title: {
     fontWeight: "bold",
@@ -25,13 +26,11 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   button: {
-    height: 40,
-    borderRadius: 4,
-    borderWidth: 1,
     borderColor: "#ccc",
+    alignSelf: "stretch",
   },
   actionContainer: {
-    marginTop: 20,
+    alignSelf: "stretch",
   },
 });
 
