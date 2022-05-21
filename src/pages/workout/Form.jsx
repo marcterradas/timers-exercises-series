@@ -2,7 +2,7 @@ import { React, useState } from "react";
 import { View, ScrollView, Text, TextInput, Button } from "react-native";
 import { useTranslation } from "react-i18next";
 
-import styles from "../styles/workout.styles";
+import styles from "../../styles/workout.styles";
 // import { saveWorkout } from "../logic/workout";
 
 const WorkoutForm = () => {

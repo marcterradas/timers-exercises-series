@@ -3,9 +3,9 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { useTranslation } from "react-i18next";
 
-import WorkoutScreen from "../pages/Workout";
-import TimerScreen from "../pages/Timer";
-import SettingsScreen from "../pages/Settings";
+import WorkoutScreen from "../pages/workout/Workout";
+import TimerScreen from "../pages/timer/Timer";
+import SettingsScreen from "../pages/settings/Settings";
 
 const Tab = createBottomTabNavigator();
 

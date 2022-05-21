@@ -1,8 +1,8 @@
 import { React, useState } from "react";
 import { View, ScrollView, Button } from "react-native";
-import WorkoutList from "../components/WorkoutList";
-import WorkoutForm from "../components/WorkoutForm";
-import styles from "../styles/workout.styles";
+import List from "./List";
+import Form from "./Form";
+import styles from "../../styles/workout.styles";
 import { t } from "i18next";
 
 const WorkoutScreen = () => {
@@ -14,9 +14,7 @@ const WorkoutScreen = () => {
 
   return (
     <View style={styles.container}>
-      <ScrollView>
-        {page == "list" ? <WorkoutList /> : <WorkoutForm />}
-      </ScrollView>
+      <ScrollView>{page == "list" ? <List /> : <Form />}</ScrollView>
       <View style={styles.actionContainer}>
         <Button
           onPress={() => {
