@@ -1,5 +1,5 @@
 import { React, useState } from "react";
-import { View, Text, TextInput, Button } from "react-native";
+import { View, ScrollView, Text, TextInput, Button } from "react-native";
 import { useTranslation } from "react-i18next";
 
 import styles from "../styles/workout.styles";
@@ -11,17 +11,19 @@ const WorkoutForm = () => {
 
   return (
     <View style={styles.form}>
-      <View>
-        <Text style={styles.title}>{t("new_workout")}</Text>
-      </View>
-      <View>
-        <Text>{t("workout_name")}</Text>
-        <TextInput
-          style={styles.input}
-          value={title}
-          onChangeText={setTitle}
-        ></TextInput>
-      </View>
+      <ScrollView>
+        <View>
+          <Text style={styles.title}>{t("new_workout")}</Text>
+        </View>
+        <View>
+          <Text>{t("workout_name")}</Text>
+          <TextInput
+            style={styles.input}
+            value={title}
+            onChangeText={setTitle}
+          ></TextInput>
+        </View>
+      </ScrollView>
       <View style={styles.actionContainer}>
         <Button
           onPress={() => {
