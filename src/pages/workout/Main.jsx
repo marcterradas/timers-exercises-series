@@ -1,5 +1,6 @@
 import { React, useState } from "react";
 import { View, ScrollView, Button } from "react-native";
+import ActionButton from "../../components/ActionButton";
 import List from "./List";
 import Form from "./Form";
 import styles from "../../styles/workout.styles";
@@ -15,16 +16,7 @@ const WorkoutScreen = () => {
   return (
     <View style={styles.container}>
       <ScrollView>{page == "list" ? <List /> : <Form />}</ScrollView>
-      <View style={styles.actionContainer}>
-        <Button
-          onPress={() => {
-            changePage();
-          }}
-          style={styles.button}
-          title={t("change_page")}
-          accessibilityLabel={t("change_page")}
-        ></Button>
-      </View>
+      <ActionButton label={t("change_page")} method={changePage} />
     </View>
   );
 };

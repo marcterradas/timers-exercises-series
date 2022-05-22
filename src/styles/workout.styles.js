@@ -25,12 +25,19 @@ const styles = StyleSheet.create({
     alignSelf: "stretch",
     padding: 10,
   },
-  button: {
-    borderColor: "#ccc",
-    alignSelf: "stretch",
-  },
   actionContainer: {
     alignSelf: "stretch",
+    alignItems: "center",
+    padding: 10,
+  },
+  button: {
+    height: 40,
+    padding: 10,
+    borderRadius: 4,
+    borderColor: "#ccc",
+    backgroundColor: "#fff",
+    alignSelf: "stretch",
+    alignItems: "center",
   },
 });
 
