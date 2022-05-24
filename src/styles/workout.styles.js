@@ -29,6 +29,7 @@ const styles = StyleSheet.create({
   actionContainer: {
     alignSelf: "stretch",
     alignItems: "center",
+    padding: 20,
   },
   button: {
     height: 40,
