@@ -10,7 +10,7 @@
         "workout_list": "Workout list",
         "workout_name": "Workout name",
         "save": "Save",
-        "change_page": "Change page"
+        "workout_add": "Add workout"
       }
     },
     "es": {
@@ -23,7 +23,8 @@
         "workout_list": "Lista de entrenamientos",
         "workout_name": "Nombre del entrenamiento",
         "save": "Guardar",
-        "change_page": "Cambiar página"
+        "change_page": "Cambiar página",
+        "workout_add": "Añadir entrenamiento"
       }
     },
     "cat": {
@@ -36,7 +37,8 @@
         "workout_list": "Llista d'entrenaments",
         "workout_name": "Nom de l'entrenament",
         "save": "Guardar",
-        "change_page": "Canviar pàgina"
+        "change_page": "Canviar pàgina",
+        "workout_add": "Afegir entrenament"
       }
     }
   }
