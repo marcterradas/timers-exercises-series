@@ -6,6 +6,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     alignSelf: "stretch",
+    paddingTop: 10,
   },
   title: {
     fontWeight: "bold",
@@ -28,7 +29,6 @@ const styles = StyleSheet.create({
   actionContainer: {
     alignSelf: "stretch",
     alignItems: "center",
-    padding: 10,
   },
   button: {
     height: 40,

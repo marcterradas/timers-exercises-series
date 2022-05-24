@@ -3,14 +3,13 @@ import { View, ScrollView, Text, TextInput, Button } from "react-native";
 import { useTranslation } from "react-i18next";
 
 import styles from "../../styles/workout.styles";
-// import { saveWorkout } from "../logic/workout";
 
 const WorkoutForm = () => {
   const { t } = useTranslation();
   //   const [title, setTitle] = useState("");
 
   return (
-    <View style={styles.container}>
+    <View>
       <ScrollView>
         <View>
           <Text style={styles.title}>{t("new_workout")}</Text>
