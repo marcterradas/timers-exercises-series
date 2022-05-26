@@ -12,7 +12,7 @@ const ActionButton = (props) => {
           props.method();
         }}
       >
-        <Text>{t(props.label)}</Text>
+        <Text style={styles.buttonText}>{t(props.label)}</Text>
       </TouchableOpacity>
     </View>
   );

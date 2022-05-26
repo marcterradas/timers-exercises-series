@@ -45,6 +45,9 @@ const styles = StyleSheet.create({
     alignSelf: "stretch",
     alignItems: "center",
   },
+  buttonText: {
+    fontWeight: "bold",
+  },
 });
 
 export default styles;
