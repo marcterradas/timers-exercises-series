@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     alignSelf: "stretch",
-    paddingTop: 10,
+    paddingTop: 20,
   },
   subContainer: {
     alignSelf: "stretch",
