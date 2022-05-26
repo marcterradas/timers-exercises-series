@@ -17,7 +17,9 @@ const WorkoutScreen = () => {
 
   return (
     <View style={styles.container}>
-      <ScrollView>{page == "list" ? <List /> : <Form />}</ScrollView>
+      <ScrollView style={styles.subContainer}>
+        {page == "list" ? <List /> : <Form />}
+      </ScrollView>
       <ActionButton label={actionLabel} method={changePage} />
     </View>
   );

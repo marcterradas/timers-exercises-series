@@ -1,38 +1,20 @@
 import { React, useState } from "react";
-import { View, ScrollView, Text, TextInput, Button } from "react-native";
+import { View, ScrollView, Text } from "react-native";
 import { useTranslation } from "react-i18next";
 
 import styles from "../../styles/workout.styles";
 
 const WorkoutForm = () => {
   const { t } = useTranslation();
-  //   const [title, setTitle] = useState("");
-
+  const [numerExercices, setNumberExercices] = useState(0);
   return (
     <View>
-      <ScrollView>
-        <View>
-          <Text style={styles.title}>{t("new_workout")}</Text>
-        </View>
-        {/* <View>
-          <Text>{t("workout_name")}</Text>
-          <TextInput
-            style={styles.input}
-            value={title}
-            onChangeText={setTitle}
-          ></TextInput>
-        </View> */}
-      </ScrollView>
-      {/* <View>
-        <Button
-          onPress={() => {
-            saveWorkout({ title: title });
-          }}
-          style={styles.button}
-          title={t("save")}
-          accessibilityLabel={t("save")}
-        ></Button>
-      </View> */}
+      <View>
+        <Text style={styles.title}>{t("new_workout")}</Text>
+      </View>
+      <View>
+        <Text>{numerExercices}</Text>
+      </View>
     </View>
   );
 };

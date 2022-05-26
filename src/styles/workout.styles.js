@@ -8,6 +8,11 @@ const styles = StyleSheet.create({
     alignSelf: "stretch",
     paddingTop: 10,
   },
+  subContainer: {
+    alignSelf: "stretch",
+    paddingRight: 20,
+    paddingLeft: 20,
+  },
   title: {
     fontWeight: "bold",
     fontSize: 20,
