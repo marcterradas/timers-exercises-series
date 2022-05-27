@@ -1,5 +1,5 @@
 import { React, useState } from "react";
-import { View, ScrollView, Text } from "react-native";
+import { View, Text } from "react-native";
 import { useTranslation } from "react-i18next";
 
 import styles from "../../styles/workout.styles";
@@ -13,7 +13,7 @@ const WorkoutForm = () => {
         <Text style={styles.title}>{t("new_workout")}</Text>
       </View>
       <View>
-        <Text>{numerExercices}</Text>
+        <Text>{t("number_exercices", { number: numerExercices })}</Text>
       </View>
     </View>
   );
