@@ -2,6 +2,8 @@ import { React, useState } from "react";
 import { View, Text } from "react-native";
 import { useTranslation } from "react-i18next";
 
+import AddWorkout from "../../components/AddWorkout";
+
 import styles from "../../styles/workout.styles";
 
 const WorkoutForm = () => {
@@ -15,6 +17,7 @@ const WorkoutForm = () => {
       <View>
         <Text>{t("number_exercices", { number: numerExercices })}</Text>
       </View>
+      <AddWorkout />
     </View>
   );
 };
