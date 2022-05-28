@@ -45,6 +45,15 @@ const styles = StyleSheet.create({
     alignSelf: "stretch",
     alignItems: "center",
   },
+  bigButton: {
+    height: 80,
+    padding: 10,
+    borderRadius: 4,
+    borderColor: "#ccc",
+    backgroundColor: "#fff",
+    alignSelf: "stretch",
+    alignItems: "center",
+  },
   buttonText: {
     fontWeight: "bold",
   },

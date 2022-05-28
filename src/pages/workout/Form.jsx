@@ -17,7 +17,7 @@ const WorkoutForm = () => {
       <View>
         <Text>{t("number_exercices", { number: numerExercices })}</Text>
       </View>
-      <AddWorkout />
+      <AddWorkout setNumberExercices={setNumberExercices} />
     </View>
   );
 };
