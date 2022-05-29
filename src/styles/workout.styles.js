@@ -13,6 +13,12 @@ const styles = StyleSheet.create({
     paddingRight: 20,
     paddingLeft: 20,
   },
+  containerJustifyLeft: {
+    flex: 1,
+    justifyContent: "center",
+    alignSelf: "stretch",
+    paddingTop: 10,
+  },
   title: {
     fontWeight: "bold",
     fontSize: 20,
@@ -25,6 +31,7 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     borderColor: "#ccc",
     backgroundColor: "#fff",
+    alignSelf: "stretch",
   },
   form: {
     flex: 1,

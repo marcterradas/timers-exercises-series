@@ -1,5 +1,5 @@
 import { React, useState } from "react";
-import { View, Text } from "react-native";
+import { View, Text, TextInput } from "react-native";
 import { useTranslation } from "react-i18next";
 
 import AddWorkout from "../../components/AddWorkout";
@@ -9,6 +9,8 @@ import styles from "../../styles/workout.styles";
 const WorkoutForm = () => {
   const { t } = useTranslation();
   const [numerExercices, setNumberExercices] = useState(0);
+  const [title, setTitle] = useState("");
+
   return (
     <View>
       <View>
@@ -17,7 +19,13 @@ const WorkoutForm = () => {
       <View>
         <Text>{t("number_exercices", { number: numerExercices })}</Text>
       </View>
-      <AddWorkout setNumberExercices={setNumberExercices} />
+      <View style={styles.containerJustifyLeft}>
+        <Text>{t("workout_name")}</Text>
+        <TextInput style={styles.input} value={title} onChangeText={setTitle} />
+      </View>
+      <View style={styles.container}>
+        <AddWorkout setNumberExercices={setNumberExercices} />
+      </View>
     </View>
   );
 };
