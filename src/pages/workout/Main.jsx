@@ -12,7 +12,9 @@ const WorkoutScreen = () => {
 
   function changePage() {
     setPage(page === "list" ? "form" : "list");
-    setActionLabel(page === "list" ? t("workout_list") : t("workout_add"));
+    setActionLabel(
+      page === "list" ? t("return_workout_list") : t("workout_add")
+    );
   }
 
   return (
