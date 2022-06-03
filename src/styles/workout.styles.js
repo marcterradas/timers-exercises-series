@@ -49,8 +49,9 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     borderColor: "#ccc",
     backgroundColor: "#fff",
-    alignSelf: "stretch",
+    alignSelf: "flex-end",
     alignItems: "center",
+    width: "50%",
   },
   bigButton: {
     height: 80,
