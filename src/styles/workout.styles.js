@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { COLORS } from "../constants/colors";
 
 const styles = StyleSheet.create({
   container: {
@@ -29,8 +30,8 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
     borderRadius: 4,
-    borderColor: "#ccc",
-    backgroundColor: "#fff",
+    borderColor: COLORS.GRAY,
+    backgroundColor: COLORS.WHITE,
     alignSelf: "stretch",
   },
   form: {
@@ -48,7 +49,7 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 4,
     borderColor: "#ccc",
-    backgroundColor: "#fff",
+    backgroundColor: COLORS.WHITE,
     alignSelf: "flex-end",
     alignItems: "center",
     width: "50%",
@@ -58,7 +59,7 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 4,
     borderColor: "#ccc",
-    backgroundColor: "#fff",
+    backgroundColor: COLORS.WHITE,
     alignSelf: "stretch",
     alignItems: "center",
   },

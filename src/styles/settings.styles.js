@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { COLORS } from "../constants/colors";
 
 const styles = StyleSheet.create({
   container: {
@@ -6,7 +7,7 @@ const styles = StyleSheet.create({
   },
   select: {
     marginTop: 10,
-    backgroundColor: "#fff",
+    backgroundColor: COLORS.WHITE,
   },
 });
 
