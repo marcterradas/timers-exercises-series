@@ -21,7 +21,7 @@ const WorkoutScreen = () => {
       <View style={styles.actionContainer}>
         {page == "list" ? (
           <ActionButton
-            label={t("workout_add")}
+            label={t("add")}
             type="actionButton"
             method={changePage}
           />

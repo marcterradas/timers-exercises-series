@@ -10,7 +10,7 @@
         "workout_list": "Workout list",
         "workout_name": "Workout name",
         "save": "Save",
-        "workout_add": "Add workout",
+        "add": "Add",
         "number_exercices": "Number of exercices: {{number}}",
         "return": "Return"
       }
@@ -26,7 +26,7 @@
         "workout_name": "Nombre del entrenamiento",
         "save": "Guardar",
         "change_page": "Cambiar página",
-        "workout_add": "Añadir entrenamiento",
+        "add": "Añadir",
         "number_exercices": "Número de ejercicios: {{number}}",
         "return": "Volver"
       }
@@ -42,7 +42,7 @@
         "workout_name": "Nom de l'entrenament",
         "save": "Guardar",
         "change_page": "Canviar pàgina",
-        "workout_add": "Afegir entrenament",
+        "add": "Afegir",
         "number_exercices": "Nombre d'exercicis: {{number}}",
         "return": "Tornar"
       }
