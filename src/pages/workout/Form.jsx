@@ -8,16 +8,12 @@ import styles from "../../styles/workout.styles";
 
 const WorkoutForm = () => {
   const { t } = useTranslation();
-  const [numerExercices, setNumberExercices] = useState(0);
   const [title, setTitle] = useState("");
 
   return (
     <View>
       <View>
         <Text style={styles.title}>{t("new_workout")}</Text>
-      </View>
-      <View>
-        <Text>{t("number_exercices", { number: numerExercices })}</Text>
       </View>
       <View style={styles.containerJustifyLeft}>
         <Text>{t("workout_name")}</Text>
