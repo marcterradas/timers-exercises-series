@@ -40,6 +40,20 @@ const styles = StyleSheet.create({
     alignSelf: "stretch",
     padding: 10,
   },
+  actionButtonContainer: {
+    paddingLeft: 5,
+    height: 40,
+    alignSelf: "stretch",
+    alignItems: "center",
+    width: "50%",
+  },
+  backButtonContainer: {
+    paddingRight: 5,
+    height: 40,
+    alignSelf: "stretch",
+    alignItems: "center",
+    width: "50%",
+  },
   actionContainer: {
     padding: 20,
     alignSelf: "flex-end",
@@ -53,7 +67,7 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.YELLOW,
     alignSelf: "flex-end",
     alignItems: "center",
-    width: "50%",
+    width: "100%",
   },
   backButton: {
     height: 40,
@@ -63,7 +77,7 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.WHITE,
     alignSelf: "flex-end",
     alignItems: "center",
-    width: "50%",
+    width: "100%",
   },
   bigButton: {
     height: 80,
