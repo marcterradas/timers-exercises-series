@@ -27,10 +27,8 @@ const styles = StyleSheet.create({
   },
   input: {
     height: 40,
-    borderWidth: 1,
     padding: 10,
     borderRadius: 4,
-    borderColor: COLORS.GRAY,
     backgroundColor: COLORS.WHITE,
     alignSelf: "stretch",
   },
