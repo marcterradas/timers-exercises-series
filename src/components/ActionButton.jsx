@@ -6,7 +6,7 @@ import { t } from "i18next";
 const ActionButton = (props) => {
   return (
     <TouchableOpacity
-      style={styles.button}
+      style={styles[props.type]}
       onPress={() => {
         props.method();
       }}

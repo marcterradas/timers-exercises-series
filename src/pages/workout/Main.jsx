@@ -8,13 +8,9 @@ import { t } from "i18next";
 
 const WorkoutScreen = () => {
   const [page, setPage] = useState("list");
-  const [actionLabel, setActionLabel] = useState(t("workout_add"));
 
   function changePage() {
     setPage(page === "list" ? "form" : "list");
-    setActionLabel(
-      page === "list" ? t("return_workout_list") : t("workout_add")
-    );
   }
 
   return (
@@ -23,7 +19,26 @@ const WorkoutScreen = () => {
         {page == "list" ? <List /> : <Form />}
       </ScrollView>
       <View style={styles.actionContainer}>
-        <ActionButton label={actionLabel} method={changePage} />
+        {page == "list" ? (
+          <ActionButton
+            label={t("workout_add")}
+            type="actionButton"
+            method={changePage}
+          />
+        ) : (
+          <>
+            <ActionButton
+              label={t("return")}
+              type="backButton"
+              method={changePage}
+            />
+            <ActionButton
+              label={t("save")}
+              type="actionButton"
+              method={changePage}
+            />
+          </>
+        )}
       </View>
     </View>
   );
