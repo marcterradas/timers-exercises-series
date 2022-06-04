@@ -15,7 +15,7 @@ const WorkoutForm = () => {
         <Text style={styles.title}>{t("new_workout")}</Text>
       </View>
       <View style={styles.containerJustifyLeft}>
-        <Text>{t("workout_name")}</Text>
+        <Text style={styles.label}>{t("workout_name")}</Text>
         <TextInput style={styles.input} value={title} onChangeText={setTitle} />
       </View>
       <View style={styles.container}>
