@@ -24,7 +24,7 @@ const WorkoutForm = () => {
         <TextInput style={styles.input} value={title} onChangeText={setTitle} />
       </View>
       <View style={styles.container}>
-        <AddWorkout setNumberExercices={setNumberExercices} />
+        <AddWorkout />
       </View>
     </View>
   );

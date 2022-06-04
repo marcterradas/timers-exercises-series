@@ -4,7 +4,7 @@ import IonIcon from "react-native-vector-icons/Ionicons";
 
 import styles from "../styles/workout.styles";
 
-const AddWorkout = (setNumberExercices) => {
+const AddWorkout = () => {
   const icon = {
     name: "add-circle-outline",
     size: 40,
