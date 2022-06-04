@@ -3,7 +3,6 @@ import { View, Text, TextInput } from "react-native";
 import { useTranslation } from "react-i18next";
 
 import AddWorkout from "../../components/AddWorkout";
-
 import styles from "../../styles/workout.styles";
 
 const WorkoutForm = () => {
