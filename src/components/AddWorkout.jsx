@@ -11,8 +11,13 @@ const AddWorkout = () => {
     size: 40,
     color: "black",
   };
+
+  function addExercice() {
+    console.log("add exercice");
+  }
+
   return (
-    <TouchableOpacity style={styles.bigButton}>
+    <TouchableOpacity onPress={addExercice} style={styles.bigButton}>
       <IonIcon name={icon.name} size={icon.size} color={icon.color} />
       <Text style={styles.buttonText}>{t("add")}</Text>
     </TouchableOpacity>
