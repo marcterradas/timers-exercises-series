@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 4,
     borderColor: "#ccc",
-    backgroundColor: COLORS.WHITE,
+    backgroundColor: COLORS.BLUE,
     alignSelf: "stretch",
     alignItems: "center",
   },
