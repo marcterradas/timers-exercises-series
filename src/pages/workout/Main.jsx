@@ -13,6 +13,10 @@ const WorkoutScreen = () => {
     setPage(page === "list" ? "form" : "list");
   }
 
+  function saveWorkout() {
+    console.log("save workout");
+  }
+
   return (
     <View style={styles.container}>
       <ScrollView style={styles.subContainer}>
@@ -35,7 +39,7 @@ const WorkoutScreen = () => {
             <ActionButton
               label={t("save")}
               type="actionButton"
-              method={changePage}
+              method={saveWorkout}
             />
           </>
         )}
