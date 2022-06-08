@@ -17,32 +17,36 @@ const WorkoutScreen = () => {
     console.log("save workout");
   }
 
+  const ListButtons = () => {
+    return (
+      <ActionButton label={t("add")} type="actionButton" method={changePage} />
+    );
+  };
+
+  const FormButtons = () => {
+    return (
+      <>
+        <ActionButton
+          label={t("return")}
+          type="backButton"
+          method={changePage}
+        />
+        <ActionButton
+          label={t("save")}
+          type="actionButton"
+          method={saveWorkout}
+        />
+      </>
+    );
+  };
+
   return (
     <View style={styles.container}>
       <ScrollView style={styles.subContainer}>
         {page == "list" ? <List /> : <Form />}
       </ScrollView>
       <View style={styles.actionContainer}>
-        {page == "list" ? (
-          <ActionButton
-            label={t("add")}
-            type="actionButton"
-            method={changePage}
-          />
-        ) : (
-          <>
-            <ActionButton
-              label={t("return")}
-              type="backButton"
-              method={changePage}
-            />
-            <ActionButton
-              label={t("save")}
-              type="actionButton"
-              method={saveWorkout}
-            />
-          </>
-        )}
+        {page == "list" ? <ListButtons /> : <FormButtons />}
       </View>
     </View>
   );
