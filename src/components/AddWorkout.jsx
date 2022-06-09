@@ -1,5 +1,5 @@
 import { React, useState } from "react";
-import { Text, TouchableOpacity, View } from "react-native";
+import { Text, TouchableOpacity, View, TextInput } from "react-native";
 import IonIcon from "react-native-vector-icons/Ionicons";
 import { t } from "i18next";
 
@@ -29,8 +29,9 @@ const AddWorkout = () => {
 
   const Form = () => {
     return (
-      <View>
-        <Text>{1111}</Text>
+      <View style={styles.containerJustifyLeft}>
+        <Text style={styles.label}>{t("exercice_name")}</Text>
+        <TextInput style={styles.input} />
       </View>
     );
   };

@@ -12,7 +12,8 @@
         "save": "Save",
         "add": "Add",
         "number_exercices": "Number of exercices: {{number}}",
-        "return": "Return"
+        "return": "Return",
+        "exercice_name": "Exercice name"
       }
     },
     "es": {
@@ -28,7 +29,8 @@
         "change_page": "Cambiar página",
         "add": "Añadir",
         "number_exercices": "Número de ejercicios: {{number}}",
-        "return": "Volver"
+        "return": "Volver",
+        "exercice_name": "Nombre del ejercicio"
       }
     },
     "cat": {
@@ -44,7 +46,8 @@
         "change_page": "Canviar pàgina",
         "add": "Afegir",
         "number_exercices": "Nombre d'exercicis: {{number}}",
-        "return": "Tornar"
+        "return": "Tornar",
+        "exercice_name": "Nom de l'exercici"
       }
     }
   }
