@@ -14,7 +14,8 @@
         "number_exercices": "Number of exercices: {{number}}",
         "return": "Return",
         "exercice_name": "Exercice name",
-        "number_repetitions": "Number of repetitions"
+        "number_repetitions": "Number of repetitions",
+        "cancel": "Cancel"
       }
     },
     "es": {
@@ -32,7 +33,8 @@
         "number_exercices": "Número de ejercicios: {{number}}",
         "return": "Volver",
         "exercice_name": "Nombre del ejercicio",
-        "number_repetitions": "Número de repeticiones"
+        "number_repetitions": "Número de repeticiones",
+        "cancel": "Cancelar"
       }
     },
     "cat": {
@@ -50,7 +52,8 @@
         "number_exercices": "Nombre d'exercicis: {{number}}",
         "return": "Tornar",
         "exercice_name": "Nom de l'exercici",
-        "number_repetitions": "Nombre de repeticions"
+        "number_repetitions": "Nombre de repeticions",
+        "cancel": "Cancel·lar"
       }
     }
   }
