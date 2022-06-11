@@ -13,7 +13,8 @@
         "add": "Add",
         "number_exercices": "Number of exercices: {{number}}",
         "return": "Return",
-        "exercice_name": "Exercice name"
+        "exercice_name": "Exercice name",
+        "number_repetitions": "Number of repetitions"
       }
     },
     "es": {
@@ -30,7 +31,8 @@
         "add": "Añadir",
         "number_exercices": "Número de ejercicios: {{number}}",
         "return": "Volver",
-        "exercice_name": "Nombre del ejercicio"
+        "exercice_name": "Nombre del ejercicio",
+        "number_repetitions": "Número de repeticiones"
       }
     },
     "cat": {
@@ -47,7 +49,8 @@
         "add": "Afegir",
         "number_exercices": "Nombre d'exercicis: {{number}}",
         "return": "Tornar",
-        "exercice_name": "Nom de l'exercici"
+        "exercice_name": "Nom de l'exercici",
+        "number_repetitions": "Nombre de repeticions"
       }
     }
   }

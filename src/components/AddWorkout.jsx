@@ -34,6 +34,10 @@ const AddWorkout = () => {
           <Text style={styles.label}>{t("exercice_name")}</Text>
           <TextInput style={styles.input} />
         </View>
+        <View style={styles.containerJustifyLeft}>
+          <Text style={styles.label}>{t("number_repetitions")}</Text>
+          <TextInput keyboardType="numeric" style={styles.input} />
+        </View>
       </View>
     );
   };
