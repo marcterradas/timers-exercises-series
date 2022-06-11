@@ -29,9 +29,11 @@ const AddWorkout = () => {
 
   const Form = () => {
     return (
-      <View style={styles.containerJustifyLeft}>
-        <Text style={styles.label}>{t("exercice_name")}</Text>
-        <TextInput style={styles.input} />
+      <View style={styles.justifyContainer}>
+        <View style={styles.containerJustifyLeft}>
+          <Text style={styles.label}>{t("exercice_name")}</Text>
+          <TextInput style={styles.input} />
+        </View>
       </View>
     );
   };

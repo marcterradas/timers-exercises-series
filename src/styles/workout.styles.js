@@ -20,6 +20,11 @@ const styles = StyleSheet.create({
     alignSelf: "stretch",
     paddingTop: 10,
   },
+  justifyContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignSelf: "stretch",
+  },
   title: {
     fontWeight: "bold",
     fontSize: 20,
