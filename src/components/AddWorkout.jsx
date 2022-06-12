@@ -19,11 +19,12 @@ const AddWorkout = () => {
   };
 
   function updateName(newName) {
-    name = newName;
+    name = newName.trim();
   }
 
   function updateRepeitions(newRepeitions) {
-    repetitions = newRepeitions;
+    const newRepetitions = parseInt(newRepeitions);
+    repetitions = !isNaN(newRepetitions) ? newRepetitions : 1;
   }
 
   function fnShowForm() {
