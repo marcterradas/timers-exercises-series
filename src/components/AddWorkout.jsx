@@ -24,7 +24,8 @@ const AddWorkout = () => {
 
   function updateRepeitions(newRepeitions) {
     const newRepetitions = parseInt(newRepeitions);
-    repetitions = !isNaN(newRepetitions) ? newRepetitions : 1;
+    repetitions =
+      !isNaN(newRepetitions) && newRepeitions > 0 ? newRepeitions : 1;
   }
 
   function fnShowForm() {
@@ -37,6 +38,7 @@ const AddWorkout = () => {
 
   function saveExercice() {
     console.log({ name, repetitions });
+    showButton();
   }
 
   const Button = () => {
