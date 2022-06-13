@@ -1,13 +1,19 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import { View, Text, TextInput } from "react-native";
 import { useTranslation } from "react-i18next";
 
 import AddWorkout from "../../components/AddWorkout";
 import styles from "../../styles/workout.styles";
+import { getData } from "../../logic/workout";
 
 const WorkoutForm = () => {
   const { t } = useTranslation();
   const [title, setTitle] = useState("");
+
+  useEffect(function () {
+    const data = getData();
+    console.log(data);
+  }, []);
 
   return (
     <View>
