@@ -1,4 +1,4 @@
-export function getData() {
+export function getWorkouts() {
   return true;
 }
 

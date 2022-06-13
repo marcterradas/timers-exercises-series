@@ -4,14 +4,14 @@ import { useTranslation } from "react-i18next";
 
 import AddWorkout from "../../components/AddWorkout";
 import styles from "../../styles/workout.styles";
-import { getData } from "../../logic/workout";
+import { getWorkouts } from "../../logic/workout";
 
 const WorkoutForm = () => {
   const { t } = useTranslation();
   const [title, setTitle] = useState("");
 
   useEffect(function () {
-    const data = getData();
+    const data = getWorkouts();
     console.log(data);
   }, []);
 
