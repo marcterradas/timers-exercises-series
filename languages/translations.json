@@ -15,7 +15,8 @@
         "return": "Return",
         "exercice_name": "Exercice name",
         "number_repetitions": "Number of repetitions",
-        "cancel": "Cancel"
+        "cancel": "Cancel",
+        "break_time": "Break time"
       }
     },
     "es": {
@@ -34,7 +35,8 @@
         "return": "Volver",
         "exercice_name": "Nombre del ejercicio",
         "number_repetitions": "Número de repeticiones",
-        "cancel": "Cancelar"
+        "cancel": "Cancelar",
+        "break_time": "Tiempo de descanso"
       }
     },
     "cat": {
@@ -53,7 +55,8 @@
         "return": "Tornar",
         "exercice_name": "Nom de l'exercici",
         "number_repetitions": "Nombre de repeticions",
-        "cancel": "Cancel·lar"
+        "cancel": "Cancel·lar",
+        "break_time": "Temps de descans"
       }
     }
   }

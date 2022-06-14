@@ -11,6 +11,7 @@ const AddWorkout = () => {
   const [showForm, setShowForm] = useState(false);
   let name = "";
   let repetitions = 0;
+  let breakTime = 0;
 
   const icon = {
     name: "add-circle-outline",
@@ -28,6 +29,11 @@ const AddWorkout = () => {
       !isNaN(newRepetitions) && newRepeitions > 0 ? newRepeitions : 1;
   }
 
+  function updateTime(newTime) {
+    const newBreakTime = parseInt(newTime);
+    breakTime = !isNaN(newBreakTime) && newTime > 0 ? newTime : 0;
+  }
+
   function fnShowForm() {
     setShowForm(true);
   }
@@ -37,7 +43,7 @@ const AddWorkout = () => {
   }
 
   function saveExercice() {
-    console.log({ name, repetitions });
+    console.log({ name, repetitions, breakTime });
     showButton();
   }
 
@@ -66,6 +72,14 @@ const AddWorkout = () => {
             keyboardType="numeric"
             style={styles.input}
             onChangeText={(newRepeitions) => updateRepeitions(newRepeitions)}
+          />
+        </View>
+        <View style={styles.containerJustifyLeft}>
+          <Text style={styles.label}>{t("break_time")}</Text>
+          <TextInput
+            keyboardType="numeric"
+            style={styles.input}
+            onChangeText={(newTime) => updateTime(newTime)}
           />
         </View>
         <View style={styles.actionContainer}>
