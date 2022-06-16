@@ -9,6 +9,7 @@ import styles from "../styles/workout.styles";
 
 const AddWorkout = () => {
   const [showForm, setShowForm] = useState(false);
+  const [exercices, setExercices] = useState([]);
   let name = "";
   let repetitions = 0;
   let breakTime = 0;
@@ -43,7 +44,11 @@ const AddWorkout = () => {
   }
 
   function saveExercice() {
-    console.log({ name, repetitions, breakTime });
+    const exercice = { name, repetitions, breakTime };
+    exercices.push(exercice);
+    name = "";
+    repetitions = 0;
+    breakTime = 0;
     showButton();
   }
 
