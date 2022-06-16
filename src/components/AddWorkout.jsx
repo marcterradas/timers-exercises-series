@@ -46,9 +46,6 @@ const AddWorkout = () => {
   function saveExercice() {
     const exercice = { name, repetitions, breakTime };
     exercices.push(exercice);
-    name = "";
-    repetitions = 0;
-    breakTime = 0;
     showButton();
   }
 
