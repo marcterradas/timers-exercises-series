@@ -3,20 +3,18 @@ import { TouchableOpacity, Text, View } from "react-native";
 import styles from "../styles/workout.styles";
 import { t } from "i18next";
 
-const ActionButton = (props) => {
+const ActionButton = ({ type, method, label }) => {
   const buttonContainer =
-    props.type == "actionButton"
-      ? "actionButtonContainer"
-      : "backButtonContainer";
+    type == "actionButton" ? "actionButtonContainer" : "backButtonContainer";
   return (
     <View style={styles[buttonContainer]}>
       <TouchableOpacity
-        style={styles[props.type]}
+        style={styles[type]}
         onPress={() => {
-          props.method();
+          method();
         }}
       >
-        <Text style={styles.buttonText}>{t(props.label)}</Text>
+        <Text style={styles.buttonText}>{t(label)}</Text>
       </TouchableOpacity>
     </View>
   );

@@ -5,7 +5,7 @@ import { t } from "i18next";
 
 import styles from "../styles/workout.styles";
 
-const AddExercice = (props) => {
+const AddExercice = ({ method }) => {
   const icon = {
     name: "add-circle-outline",
     size: 40,
@@ -13,7 +13,7 @@ const AddExercice = (props) => {
   };
 
   return (
-    <TouchableOpacity onPress={() => props.method()} style={styles.bigButton}>
+    <TouchableOpacity onPress={() => method()} style={styles.bigButton}>
       <IonIcon name={icon.name} size={icon.size} color={icon.color} />
       <Text style={styles.buttonText}>{t("add")}</Text>
     </TouchableOpacity>
