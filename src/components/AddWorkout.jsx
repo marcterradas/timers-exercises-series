@@ -1,9 +1,9 @@
 import { React, useState } from "react";
-import { Text, TouchableOpacity, View, TextInput } from "react-native";
-import IonIcon from "react-native-vector-icons/Ionicons";
+import { Text, View, TextInput } from "react-native";
 import { t } from "i18next";
 
 import ActionButton from "./ActionButton";
+import AddExercice from "./AddExercice";
 
 import styles from "../styles/workout.styles";
 
@@ -13,12 +13,6 @@ const AddWorkout = () => {
   let name = "";
   let repetitions = 0;
   let breakTime = 0;
-
-  const icon = {
-    name: "add-circle-outline",
-    size: 40,
-    color: "black",
-  };
 
   function updateName(newName) {
     name = newName.trim();
@@ -48,15 +42,6 @@ const AddWorkout = () => {
     exercices.push(exercice);
     showButton();
   }
-
-  const Button = () => {
-    return (
-      <TouchableOpacity onPress={fnShowForm} style={styles.bigButton}>
-        <IonIcon name={icon.name} size={icon.size} color={icon.color} />
-        <Text style={styles.buttonText}>{t("add")}</Text>
-      </TouchableOpacity>
-    );
-  };
 
   const Form = () => {
     return (
@@ -100,7 +85,7 @@ const AddWorkout = () => {
     );
   };
 
-  return showForm ? <Form /> : <Button />;
+  return showForm ? <Form /> : <AddExercice method={fnShowForm} />;
 };
 
 export default AddWorkout;
