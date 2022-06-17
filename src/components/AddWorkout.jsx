@@ -3,7 +3,7 @@ import { Text, View, TextInput } from "react-native";
 import { t } from "i18next";
 
 import ActionButton from "./ActionButton";
-import AddExercice from "./AddExercice";
+import AddExerciceButton from "./AddExerciceButton";
 
 import styles from "../styles/workout.styles";
 
@@ -85,7 +85,7 @@ const AddWorkout = () => {
     );
   };
 
-  return showForm ? <Form /> : <AddExercice method={fnShowForm} />;
+  return showForm ? <Form /> : <AddExerciceButton method={fnShowForm} />;
 };
 
 export default AddWorkout;

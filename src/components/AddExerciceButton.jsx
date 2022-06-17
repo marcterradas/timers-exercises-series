@@ -5,7 +5,7 @@ import { t } from "i18next";
 
 import styles from "../styles/workout.styles";
 
-const AddExercice = ({ method }) => {
+const AddExerciceButton = ({ method }) => {
   const icon = {
     name: "add-circle-outline",
     size: 40,
@@ -20,4 +20,4 @@ const AddExercice = ({ method }) => {
   );
 };
 
-export default AddExercice;
+export default AddExerciceButton;
