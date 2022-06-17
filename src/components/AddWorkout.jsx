@@ -4,6 +4,7 @@ import { t } from "i18next";
 
 import ActionButton from "./ActionButton";
 import AddExerciceButton from "./AddExerciceButton";
+import Input from "./Input";
 
 import styles from "../styles/workout.styles";
 
@@ -46,29 +47,13 @@ const AddWorkout = () => {
   const Form = () => {
     return (
       <View style={styles.justifyContainer}>
-        <View style={styles.containerJustifyLeft}>
-          <Text style={styles.label}>{t("exercice_name")}</Text>
-          <TextInput
-            style={styles.input}
-            onChangeText={(newName) => updateName(newName)}
-          />
-        </View>
-        <View style={styles.containerJustifyLeft}>
-          <Text style={styles.label}>{t("number_repetitions")}</Text>
-          <TextInput
-            keyboardType="numeric"
-            style={styles.input}
-            onChangeText={(newRepeitions) => updateRepeitions(newRepeitions)}
-          />
-        </View>
-        <View style={styles.containerJustifyLeft}>
-          <Text style={styles.label}>{t("break_time")}</Text>
-          <TextInput
-            keyboardType="numeric"
-            style={styles.input}
-            onChangeText={(newTime) => updateTime(newTime)}
-          />
-        </View>
+        <Input label="exercice_name" callBack={updateName} type="default" />
+        <Input
+          label="number_repetitions"
+          callBack={updateRepeitions}
+          type="numeric"
+        />
+        <Input label="break_time" callBack={updateTime} type="numeric" />
         <View style={styles.actionContainer}>
           <ActionButton
             label={t("cancel")}
