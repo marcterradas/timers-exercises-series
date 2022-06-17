@@ -19,7 +19,11 @@ const WorkoutScreen = () => {
 
   const ListButtons = () => {
     return (
-      <ActionButton label={t("add")} type="actionButton" method={changePage} />
+      <ActionButton
+        label={t("add")}
+        type="actionButton"
+        callBack={changePage}
+      />
     );
   };
 
@@ -29,12 +33,12 @@ const WorkoutScreen = () => {
         <ActionButton
           label={t("return")}
           type="backButton"
-          method={changePage}
+          callBack={changePage}
         />
         <ActionButton
           label={t("save")}
           type="actionButton"
-          method={saveWorkout}
+          callBack={saveWorkout}
         />
       </>
     );

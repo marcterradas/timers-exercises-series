@@ -3,7 +3,7 @@ import { TouchableOpacity, Text, View } from "react-native";
 import styles from "../styles/workout.styles";
 import { t } from "i18next";
 
-const ActionButton = ({ type, method, label }) => {
+const ActionButton = ({ type, callBack, label }) => {
   const buttonContainer =
     type == "actionButton" ? "actionButtonContainer" : "backButtonContainer";
   return (
@@ -11,7 +11,7 @@ const ActionButton = ({ type, method, label }) => {
       <TouchableOpacity
         style={styles[type]}
         onPress={() => {
-          method();
+          callBack();
         }}
       >
         <Text style={styles.buttonText}>{t(label)}</Text>

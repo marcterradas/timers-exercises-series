@@ -73,12 +73,12 @@ const AddWorkout = () => {
           <ActionButton
             label={t("cancel")}
             type="backButton"
-            method={showButton}
+            callBack={showButton}
           />
           <ActionButton
             label={t("save")}
             type="actionButton"
-            method={saveExercice}
+            callBack={saveExercice}
           />
         </View>
       </View>
