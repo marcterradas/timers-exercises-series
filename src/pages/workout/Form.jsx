@@ -12,33 +12,19 @@ import Input from "../../components/Input";
 
 const WorkoutForm = () => {
   const { t } = useTranslation();
-  const [title, setTitle] = useState("");
   const [showForm, setShowForm] = useState(false);
   const [exercices, setExercices] = useState([]);
+  let title = "";
   let name = "";
   let repetitions = 0;
   let breakTime = 0;
 
-  function updateName(newName) {
-    name = cleanString(newName);
-  }
-
-  function updateRepeitions(newRepeitions) {
-    repetitions = cleanNumber(newRepeitions);
-    if (repetitions <= 0) repetitions = 1;
-  }
-
-  function updateTime(newTime) {
-    breakTime = cleanNumber(newTime);
-  }
-
-  function fnShowForm() {
-    setShowForm(true);
-  }
-
-  function showButton() {
-    setShowForm(false);
-  }
+  const updateTitle = (value) => (title = cleanString(value));
+  const updateName = (value) => (name = cleanString(value));
+  const updateRepetitions = (value) => (repetitions = cleanNumber(value));
+  const updateBreakTime = (value) => (breakTime = cleanNumber(value));
+  const fnShowForm = () => setShowForm(true);
+  const showButton = () => setShowForm(false);
 
   function saveExercice() {
     const exercice = { name, repetitions, breakTime };
@@ -57,10 +43,10 @@ const WorkoutForm = () => {
         <Input label="exercice_name" callBack={updateName} type="default" />
         <Input
           label="number_repetitions"
-          callBack={updateRepeitions}
+          callBack={updateRepetitions}
           type="numeric"
         />
-        <Input label="break_time" callBack={updateTime} type="numeric" />
+        <Input label="break_time" callBack={updateBreakTime} type="numeric" />
         <View style={styles.actionContainer}>
           <ActionButton
             label={t("cancel")}
@@ -82,7 +68,7 @@ const WorkoutForm = () => {
       <View>
         <Text style={styles.title}>{t("new_workout")}</Text>
       </View>
-      <Input label="workout_name" callBack={setTitle} type="default" />
+      <Input label="workout_name" callBack={updateTitle} type="default" />
       <View style={styles.container}>
         {showForm ? <Form /> : <AddExerciceButton callBack={fnShowForm} />}
       </View>
