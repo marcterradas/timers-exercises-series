@@ -84,7 +84,7 @@ const WorkoutForm = () => {
       </View>
       <Input label="workout_name" callBack={setTitle} type="default" />
       <View style={styles.container}>
-        {showForm ? <Form /> : <AddExerciceButton method={fnShowForm} />}
+        {showForm ? <Form /> : <AddExerciceButton callBack={fnShowForm} />}
       </View>
     </View>
   );
