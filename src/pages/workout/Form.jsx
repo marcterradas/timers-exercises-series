@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 
 import styles from "../../styles/workout.styles";
 import { getWorkouts } from "../../logic/workout";
+import { cleanString, cleanNumber } from "../../logic/helpers";
 
 import ActionButton from "../../components/ActionButton";
 import AddExerciceButton from "../../components/AddExerciceButton";
@@ -19,18 +20,16 @@ const WorkoutForm = () => {
   let breakTime = 0;
 
   function updateName(newName) {
-    name = newName.trim();
+    name = cleanString(newName);
   }
 
   function updateRepeitions(newRepeitions) {
-    const newRepetitions = parseInt(newRepeitions);
-    repetitions =
-      !isNaN(newRepetitions) && newRepeitions > 0 ? newRepeitions : 1;
+    repetitions = cleanNumber(newRepeitions);
+    if (repetitions <= 0) repetitions = 1;
   }
 
   function updateTime(newTime) {
-    const newBreakTime = parseInt(newTime);
-    breakTime = !isNaN(newBreakTime) && newTime > 0 ? newTime : 0;
+    breakTime = cleanNumber(newTime);
   }
 
   function fnShowForm() {
