@@ -9,6 +9,7 @@ import { cleanString, cleanNumber } from "../../logic/helpers";
 import ActionButton from "../../components/ActionButton";
 import AddExerciceButton from "../../components/AddExerciceButton";
 import Input from "../../components/Input";
+import Exercice from "../../components/Exercice";
 
 const WorkoutForm = () => {
   const { t } = useTranslation();
@@ -27,15 +28,36 @@ const WorkoutForm = () => {
   const showButton = () => setShowForm(false);
 
   function saveExercice() {
-    const exercice = { name, repetitions, breakTime };
-    exercices.push(exercice);
+    const newExercice = { name, repetitions, breakTime };
+    exercices.push(newExercice);
     showButton();
   }
 
-  useEffect(function () {
-    const data = getWorkouts();
-    console.log(data);
-  }, []);
+  //   useEffect(() => {
+  //     const data = getWorkouts();
+  //   }, []);
+
+  const ExercicesComponents = exercices.map(
+    ({ name, repetitions, breakTime }, index) => {
+      return (
+        <Exercice
+          key={index}
+          name={name}
+          repetitions={repetitions}
+          breakTime={breakTime}
+        />
+      );
+    }
+  );
+
+  const List = () => {
+    return (
+      <>
+        <AddExerciceButton callBack={fnShowForm} />
+        {ExercicesComponents}
+      </>
+    );
+  };
 
   const Form = () => {
     return (
@@ -69,9 +91,7 @@ const WorkoutForm = () => {
         <Text style={styles.title}>{t("new_workout")}</Text>
       </View>
       <Input label="workout_name" callBack={updateTitle} type="default" />
-      <View style={styles.container}>
-        {showForm ? <Form /> : <AddExerciceButton callBack={fnShowForm} />}
-      </View>
+      <View style={styles.container}>{showForm ? <Form /> : <List />}</View>
     </View>
   );
 };
