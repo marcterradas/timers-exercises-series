@@ -13,3 +13,14 @@ test("cleanString", () => {
   expect(cleanString(" string ")).toBe("String");
   expect(cleanString(" String ")).toBe("String");
 });
+
+test("cleanNumber", () => {
+  expect(cleanNumber()).toBe(0);
+  expect(cleanNumber(null)).toBe(0);
+  expect(cleanNumber(false)).toBe(0);
+  expect(cleanNumber(undefined)).toBe(0);
+  expect(cleanNumber("0")).toBe(0);
+  expect(cleanNumber(0)).toBe(0);
+  expect(cleanNumber("022")).toBe(22);
+  expect(cleanNumber(22)).toBe(22);
+});
