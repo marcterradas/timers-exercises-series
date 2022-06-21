@@ -1,5 +1,7 @@
 export function cleanString(string = "") {
-  return string.trim().charAt(0).toUpperCase();
+  const firstLetter = string.trim().charAt(0).toUpperCase();
+  const restOfString = string.slice(1);
+  return `${firstLetter}${restOfString}`;
 }
 
 export function cleanNumber(number = 0) {
