@@ -101,7 +101,6 @@ const styles = StyleSheet.create({
     borderColor: COLORS.GRAY,
     backgroundColor: COLORS.GRAY,
     alignSelf: "stretch",
-    alignItems: "center",
   },
   buttonText: {
     fontWeight: "bold",
