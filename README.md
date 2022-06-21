@@ -13,3 +13,9 @@ npm run start
 ```
 npm run android
 ```
+
+### Test logics
+
+```
+npm run test
+```
