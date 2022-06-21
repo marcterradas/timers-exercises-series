@@ -6,7 +6,7 @@ import styles from "../styles/workout.styles";
 const Exercice = ({ name, repetitions, breakTime }) => {
   return (
     <View style={styles.exerciceButton}>
-      <Text>{name}</Text>
+      <Text style={styles.exerciceTitle}>{name}</Text>
       <Text>{repetitions}</Text>
       <Text>{breakTime}</Text>
     </View>

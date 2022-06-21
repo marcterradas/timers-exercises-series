@@ -102,6 +102,10 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.GRAY,
     alignSelf: "stretch",
   },
+  exerciceTitle: {
+    fontWeight: "bold",
+    fontSize: 16,
+  },
   buttonText: {
     fontWeight: "bold",
   },
