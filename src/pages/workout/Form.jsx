@@ -33,9 +33,9 @@ const WorkoutForm = () => {
     showButton();
   }
 
-  //   useEffect(() => {
-  //     const data = getWorkouts();
-  //   }, []);
+  function openExercicePopup() {
+    console.log("open exercice popup ...");
+  }
 
   const ExercicesComponents = exercices.map(
     ({ name, repetitions, breakTime }, index) => {
@@ -45,6 +45,7 @@ const WorkoutForm = () => {
           name={name}
           repetitions={repetitions}
           breakTime={breakTime}
+          callBack={openExercicePopup}
         />
       );
     }
