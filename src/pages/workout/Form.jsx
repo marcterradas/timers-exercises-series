@@ -9,11 +9,13 @@ import ActionButton from "../../components/ActionButton";
 import AddExerciceButton from "../../components/AddExerciceButton";
 import Input from "../../components/Input";
 import Exercice from "../../components/Exercice";
+import PopupExercice from "../../components/PopupExercice";
 
 const WorkoutForm = () => {
   const { t } = useTranslation();
   const [showForm, setShowForm] = useState(false);
   const [exercices, setExercices] = useState([]);
+  const [showPopup, setShowPopup] = useState(false);
   let title = "";
   let name = "";
   let repetitions = 0;
@@ -33,7 +35,7 @@ const WorkoutForm = () => {
 
   function openExercicePopup(index) {
     console.log(index);
-    console.log("open exercice popup ...");
+    setShowPopup(true);
   }
 
   const ExercicesComponents = exercices.map(
@@ -85,6 +87,10 @@ const WorkoutForm = () => {
       </View>
     );
   };
+
+  if (showPopup) {
+    return <PopupExercice />;
+  }
 
   return (
     <View>
