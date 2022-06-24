@@ -31,7 +31,8 @@ const WorkoutForm = () => {
     showButton();
   }
 
-  function openExercicePopup() {
+  function openExercicePopup(index) {
+    console.log(index);
     console.log("open exercice popup ...");
   }
 
@@ -40,6 +41,7 @@ const WorkoutForm = () => {
       return (
         <Exercice
           key={index}
+          index={index}
           name={name}
           repetitions={repetitions}
           breakTime={breakTime}

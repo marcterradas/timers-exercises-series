@@ -4,9 +4,12 @@ import { t } from "i18next";
 
 import styles from "../styles/workout.styles";
 
-const Exercice = ({ name, repetitions, breakTime, callBack }) => {
+const Exercice = ({ index, name, repetitions, breakTime, callBack }) => {
   return (
-    <TouchableOpacity onPress={() => callBack()} style={styles.exerciceButton}>
+    <TouchableOpacity
+      onPress={() => callBack(index)}
+      style={styles.exerciceButton}
+    >
       <Text style={styles.exerciceTitle}>{name}</Text>
       <Text>{t("exercice_number_repetitions", { number: repetitions })}</Text>
       <Text>{t("exercice_break_time", { number: breakTime })}</Text>
