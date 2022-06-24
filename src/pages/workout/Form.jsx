@@ -1,9 +1,8 @@
-import { React, useState, useEffect } from "react";
+import { React, useState } from "react";
 import { View, Text } from "react-native";
 import { useTranslation } from "react-i18next";
 
 import styles from "../../styles/workout.styles";
-import { getWorkouts } from "../../logic/workout";
 import { cleanString, cleanNumber } from "../../logic/helpers";
 
 import ActionButton from "../../components/ActionButton";
@@ -28,8 +27,7 @@ const WorkoutForm = () => {
   const showButton = () => setShowForm(false);
 
   function saveExercice() {
-    const newExercice = { name, repetitions, breakTime };
-    exercices.push(newExercice);
+    exercices.push({ name, repetitions, breakTime });
     showButton();
   }
 
