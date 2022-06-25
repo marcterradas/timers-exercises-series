@@ -1,7 +1,7 @@
 import { React } from "react";
 import { View, Text } from "react-native";
 
-const PopupExercice = () => {
+const PopupExercice = ({ name, repetitions, breakTime }) => {
   return (
     <View>
       <Text>Popup exercice ...</Text>

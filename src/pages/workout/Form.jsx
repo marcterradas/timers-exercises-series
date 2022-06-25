@@ -16,6 +16,7 @@ const WorkoutForm = () => {
   const [showForm, setShowForm] = useState(false);
   const [exercices, setExercices] = useState([]);
   const [showPopup, setShowPopup] = useState(false);
+  const [index, setIndex] = useState(-1);
   let title = "";
   let name = "";
   let repetitions = 0;
@@ -34,7 +35,7 @@ const WorkoutForm = () => {
   }
 
   function openExercicePopup(index) {
-    console.log(index);
+    setIndex(index);
     setShowPopup(true);
   }
 
@@ -89,7 +90,14 @@ const WorkoutForm = () => {
   };
 
   if (showPopup) {
-    return <PopupExercice />;
+    const { name, repetitions, breakTime } = exercices[index];
+    return (
+      <PopupExercice
+        name={name}
+        repetitions={repetitions}
+        breakTime={breakTime}
+      />
+    );
   }
 
   return (
