@@ -1,5 +1,5 @@
 import { React, useState } from "react";
-import { View, Text } from "react-native";
+import { View, Text, ScrollView } from "react-native";
 import { useTranslation } from "react-i18next";
 
 import styles from "../../styles/workout.styles";
@@ -11,7 +11,7 @@ import Input from "../../components/Input";
 import Exercice from "../../components/Exercice";
 import PopupExercice from "../../components/PopupExercice";
 
-const WorkoutForm = () => {
+const WorkoutForm = ({ callBack }) => {
   const { t } = useTranslation();
   const [showForm, setShowForm] = useState(false);
   const [exercices, setExercices] = useState([]);
@@ -28,6 +28,10 @@ const WorkoutForm = () => {
   const updateBreakTime = (value) => (breakTime = cleanNumber(value));
   const fnShowForm = () => setShowForm(true);
   const showButton = () => setShowForm(false);
+
+  function saveWorkout() {
+    console.log("save workout ...");
+  }
 
   function saveExercice() {
     exercices.push({ name, repetitions, breakTime });
@@ -101,13 +105,27 @@ const WorkoutForm = () => {
   }
 
   return (
-    <View>
-      <View>
-        <Text style={styles.title}>{t("new_workout")}</Text>
+    <>
+      <ScrollView style={styles.subContainer}>
+        <View>
+          <Text style={styles.title}>{t("new_workout")}</Text>
+        </View>
+        <Input label="workout_name" callBack={updateTitle} type="default" />
+        <View style={styles.container}>{showForm ? <Form /> : <List />}</View>
+      </ScrollView>
+      <View style={styles.actionContainer}>
+        <ActionButton
+          label={t("return")}
+          type="backButton"
+          callBack={callBack}
+        />
+        <ActionButton
+          label={t("save")}
+          type="actionButton"
+          callBack={saveWorkout}
+        />
       </View>
-      <Input label="workout_name" callBack={updateTitle} type="default" />
-      <View style={styles.container}>{showForm ? <Form /> : <List />}</View>
-    </View>
+    </>
   );
 };
 
