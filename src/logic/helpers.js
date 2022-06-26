@@ -14,9 +14,9 @@ export function cleanString(string = "") {
 }
 
 /**
- * clean pararm number
+ * clean pararm numberif param is not a valid number transform to 0
  * @param {integer} number
- * @returns integer, if param is invalid return 0
+ * @returns parsed number
  */
 export function cleanNumber(number = 0) {
   return isNaN(number) || !number ? 0 : parseInt(number);
