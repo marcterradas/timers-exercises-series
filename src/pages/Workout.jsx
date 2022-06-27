@@ -1,10 +1,10 @@
 import { React, useState } from "react";
 import { View } from "react-native";
 
-import WorkoutList from "../../components/WorkoutList";
-import WorkoutForm from "../../components/WorkoutForm";
+import WorkoutList from "../components/WorkoutList";
+import WorkoutForm from "../components/WorkoutForm";
 
-import styles from "../../styles/workout.styles";
+import styles from "../styles/workout.styles";
 
 const WorkoutScreen = () => {
   const [page, setPage] = useState("list");
