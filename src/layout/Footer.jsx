@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 
 import Workout from "../pages/Workout";
 import Timer from "../pages/Timer";
-import SettingsScreen from "../pages/settings/Main";
+import Settings from "../pages/Settings";
 
 const Tab = createBottomTabNavigator();
 
@@ -51,7 +51,7 @@ const Footer = () => {
       />
       <Tab.Screen
         name={settings}
-        component={SettingsScreen}
+        component={Settings}
         options={{ tabBarLabel: t("settings") }}
       />
     </Tab.Navigator>
