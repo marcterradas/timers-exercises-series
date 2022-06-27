@@ -2,7 +2,7 @@ import { React, useState } from "react";
 import { View } from "react-native";
 
 import WorkoutList from "../../components/WorkoutList";
-import Form from "./Form";
+import WorkoutForm from "../../components/WorkoutForm";
 
 import styles from "../../styles/workout.styles";
 
@@ -16,7 +16,7 @@ const WorkoutScreen = () => {
   if (page == "form") {
     return (
       <View style={styles.container}>
-        <Form callBack={changePage} />
+        <WorkoutForm callBack={changePage} />
       </View>
     );
   }

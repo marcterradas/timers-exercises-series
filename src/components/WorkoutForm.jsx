@@ -2,14 +2,14 @@ import { React, useState } from "react";
 import { View, Text, ScrollView } from "react-native";
 import { useTranslation } from "react-i18next";
 
-import styles from "../../styles/workout.styles";
-import { cleanString, cleanNumber } from "../../logic/helpers";
+import styles from "../styles/workout.styles";
+import { cleanString, cleanNumber } from "../logic/helpers";
 
-import ActionButton from "../../components/ActionButton";
-import AddExerciceButton from "../../components/AddExerciceButton";
-import Input from "../../components/Input";
-import Exercice from "../../components/Exercice";
-import PopupExercice from "../../components/PopupExercice";
+import ActionButton from "./ActionButton";
+import AddExerciceButton from "./AddExerciceButton";
+import Input from "./Input";
+import Exercice from "./Exercice";
+import PopupExercice from "./PopupExercice";
 
 const WorkoutForm = ({ callBack }) => {
   const { t } = useTranslation();
