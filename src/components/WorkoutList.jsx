@@ -2,9 +2,9 @@ import React from "react";
 import { View, Text, ScrollView } from "react-native";
 import { useTranslation } from "react-i18next";
 
-import ActionButton from "../../components/ActionButton";
+import ActionButton from "./ActionButton";
 
-import styles from "../../styles/workout.styles";
+import styles from "../styles/workout.styles";
 
 const WorkoutList = ({ callBack }) => {
   const { t } = useTranslation();

@@ -1,7 +1,7 @@
 import { React, useState } from "react";
 import { View } from "react-native";
 
-import List from "./List";
+import WorkoutList from "../../components/WorkoutList";
 import Form from "./Form";
 
 import styles from "../../styles/workout.styles";
@@ -23,7 +23,7 @@ const WorkoutScreen = () => {
 
   return (
     <View style={styles.container}>
-      <List callBack={changePage} />
+      <WorkoutList callBack={changePage} />
     </View>
   );
 };
