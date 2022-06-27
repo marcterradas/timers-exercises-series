@@ -4,7 +4,7 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import { useTranslation } from "react-i18next";
 
 import Workout from "../pages/Workout";
-import TimerScreen from "../pages/timer/Main";
+import Timer from "../pages/Timer";
 import SettingsScreen from "../pages/settings/Main";
 
 const Tab = createBottomTabNavigator();
@@ -46,7 +46,7 @@ const Footer = () => {
       />
       <Tab.Screen
         name={timer}
-        component={TimerScreen}
+        component={Timer}
         options={{ tabBarLabel: t("timer") }}
       />
       <Tab.Screen
