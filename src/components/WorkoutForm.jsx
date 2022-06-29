@@ -10,6 +10,7 @@ import AddExerciceButton from "./AddExerciceButton";
 import Input from "./Input";
 import Exercice from "./Exercice";
 import PopupExercice from "./PopupExercice";
+import ExerciceForm from "./ExerciceForm";
 
 const WorkoutForm = ({ callBack }) => {
   const { t } = useTranslation();
@@ -67,32 +68,6 @@ const WorkoutForm = ({ callBack }) => {
     );
   };
 
-  const Form = () => {
-    return (
-      <View style={styles.justifyContainer}>
-        <Input label="exercice_name" callBack={updateName} type="default" />
-        <Input
-          label="number_repetitions"
-          callBack={updateRepetitions}
-          type="numeric"
-        />
-        <Input label="break_time" callBack={updateBreakTime} type="numeric" />
-        <View style={styles.actionContainer}>
-          <ActionButton
-            label={t("cancel")}
-            type="backButton"
-            callBack={showButton}
-          />
-          <ActionButton
-            label={t("save")}
-            type="actionButton"
-            callBack={saveExercice}
-          />
-        </View>
-      </View>
-    );
-  };
-
   if (showPopup) {
     const { name, repetitions, breakTime } = exercices[index];
     return (
@@ -111,7 +86,19 @@ const WorkoutForm = ({ callBack }) => {
           <Text style={styles.title}>{t("new_workout")}</Text>
         </View>
         <Input label="workout_name" callBack={updateTitle} type="default" />
-        <View style={styles.container}>{showForm ? <Form /> : <List />}</View>
+        <View style={styles.container}>
+          {showForm ? (
+            <ExerciceForm
+              updateName={updateName}
+              updateRepetitions={updateRepetitions}
+              updateBreakTime={updateBreakTime}
+              showButton={showButton}
+              saveExercice={saveExercice}
+            />
+          ) : (
+            <List />
+          )}
+        </View>
       </ScrollView>
       <View style={styles.actionContainer}>
         <ActionButton
