@@ -1,11 +1,20 @@
 import { React } from "react";
-import { View, Text } from "react-native";
+import { View, Text, ScrollView } from "react-native";
+
+import styles from "../styles/workout.styles";
 
 const PopupExercice = ({ name, repetitions, breakTime }) => {
   return (
-    <View>
-      <Text>Popup exercice ...</Text>
-    </View>
+    <>
+      <ScrollView style={styles.subContainer}>
+        <View style={styles.container}>
+          <Text>Popup exercice ...</Text>
+        </View>
+      </ScrollView>
+      <View style={styles.actionContainer}>
+        <Text>Buttons ...</Text>
+      </View>
+    </>
   );
 };
 
