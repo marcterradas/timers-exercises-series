@@ -18,7 +18,9 @@
         "cancel": "Cancel",
         "break_time": "Break time",
         "exercice_number_repetitions": "Number of repetitions: {{number}}",
-        "exercice_break_time": "Break time: {{number}}"
+        "exercice_break_time": "Break time: {{number}}",
+        "delete": "Delete",
+        "edit": "Edit"
       }
     },
     "es": {
@@ -40,7 +42,9 @@
         "cancel": "Cancelar",
         "break_time": "Tiempo de descanso",
         "exercice_number_repetitions": "Número de repeticiones: {{number}}",
-        "exercice_break_time": "Tiempo de descanso: {{number}}"
+        "exercice_break_time": "Tiempo de descanso: {{number}}",
+        "delete": "Eliminar",
+        "edit": "Editar"
       }
     },
     "cat": {
@@ -62,7 +66,9 @@
         "cancel": "Cancel·lar",
         "break_time": "Temps de descans",
         "exercice_number_repetitions": "Nombre de repeticions: {{number}}",
-        "exercice_break_time": "Temps de descans: {{number}}"
+        "exercice_break_time": "Temps de descans: {{number}}",
+        "delete": "Eliminar",
+        "edit": "Editar"
       }
     }
   }

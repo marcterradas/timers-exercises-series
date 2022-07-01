@@ -1,18 +1,30 @@
 import { React } from "react";
-import { View, Text, ScrollView } from "react-native";
+import { View, ScrollView } from "react-native";
+import { useTranslation } from "react-i18next";
+
+import ActionButton from "./ActionButton";
 
 import styles from "../styles/workout.styles";
 
 const PopupExercice = ({ name, repetitions, breakTime }) => {
+  const { t } = useTranslation();
+
+  function edit() {
+    console.log("edit ...");
+  }
+
+  function remove() {
+    console.log("delete ...");
+  }
+
   return (
     <>
       <ScrollView style={styles.subContainer}>
-        <View style={styles.container}>
-          <Text>Popup exercice ...</Text>
-        </View>
+        <View style={styles.container}></View>
       </ScrollView>
       <View style={styles.actionContainer}>
-        <Text>Buttons ...</Text>
+        <ActionButton label={t("delete")} type="backButton" callBack={remove} />
+        <ActionButton label={t("edit")} type="actionButton" callBack={edit} />
       </View>
     </>
   );
