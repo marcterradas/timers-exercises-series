@@ -91,6 +91,16 @@ const styles = StyleSheet.create({
     alignItems: "center",
     width: "100%",
   },
+  removeButton: {
+    height: 40,
+    padding: 10,
+    borderRadius: 4,
+    borderColor: COLORS.GRAY,
+    backgroundColor: COLORS.RED,
+    alignSelf: "flex-end",
+    alignItems: "center",
+    width: "100%",
+  },
   bigButton: {
     height: 80,
     padding: 10,
