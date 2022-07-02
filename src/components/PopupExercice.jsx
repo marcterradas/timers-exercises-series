@@ -6,7 +6,7 @@ import ActionButton from "./ActionButton";
 
 import styles from "../styles/workout.styles";
 
-const PopupExercice = ({ name, repetitions, breakTime }) => {
+const PopupExercice = ({ name, repetitions, breakTime, setShowPopup }) => {
   const { t } = useTranslation();
 
   function edit() {
@@ -17,14 +17,28 @@ const PopupExercice = ({ name, repetitions, breakTime }) => {
     console.log("delete ...");
   }
 
+  function close() {
+    setShowPopup(false);
+  }
+
   return (
     <>
-      <ScrollView style={styles.subContainer}>
-        <View style={styles.container}></View>
-      </ScrollView>
-      <View style={styles.actionContainer}>
-        <ActionButton label={t("delete")} type="backButton" callBack={remove} />
-        <ActionButton label={t("edit")} type="actionButton" callBack={edit} />
+      <View style={styles.container}>
+        <ActionButton
+          label={t("edit")}
+          type="centerActionButton"
+          callBack={edit}
+        />
+        <ActionButton
+          label={t("delete")}
+          type="centerActionButton"
+          callBack={remove}
+        />
+        <ActionButton
+          label={t("return")}
+          type="centerBackButton"
+          callBack={close}
+        />
       </View>
     </>
   );
