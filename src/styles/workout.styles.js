@@ -59,6 +59,13 @@ const styles = StyleSheet.create({
     alignItems: "center",
     width: "50%",
   },
+  centerButtonContainer: {
+    height: 40,
+    alignSelf: "center",
+    alignItems: "center",
+    width: "50%",
+    marginBottom: 10,
+  },
   actionContainer: {
     padding: 20,
     alignSelf: "flex-end",
