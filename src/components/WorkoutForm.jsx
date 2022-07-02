@@ -75,6 +75,7 @@ const WorkoutForm = ({ callBack }) => {
         name={name}
         repetitions={repetitions}
         breakTime={breakTime}
+        setShowPopup={setShowPopup}
       />
     );
   }
