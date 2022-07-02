@@ -31,7 +31,7 @@ const PopupExercice = ({ name, repetitions, breakTime, setShowPopup }) => {
         />
         <ActionButton
           label={t("delete")}
-          type="centerActionButton"
+          type="centerRemoveButton"
           callBack={remove}
         />
         <ActionButton
