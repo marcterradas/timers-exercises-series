@@ -4,8 +4,11 @@ import styles from "../styles/workout.styles";
 import { t } from "i18next";
 
 const ActionButton = ({ type, callBack, label }) => {
-  const buttonContainer =
-    type == "actionButton" ? "actionButtonContainer" : "backButtonContainer";
+  const types = {
+    actionButton: "actionButtonContainer",
+    backButton: "backButtonContainer",
+  };
+  const buttonContainer = types[type];
   return (
     <View style={styles[buttonContainer]}>
       <TouchableOpacity
