@@ -44,6 +44,10 @@ const WorkoutForm = ({ callBack }) => {
     setShowPopup(true);
   }
 
+  function removeExercice(index) {
+    console.log("remove exercice ...");
+  }
+
   const ExercicesComponents = exercices.map(
     ({ name, repetitions, breakTime }, index) => {
       return (
@@ -76,6 +80,7 @@ const WorkoutForm = ({ callBack }) => {
         repetitions={repetitions}
         breakTime={breakTime}
         setShowPopup={setShowPopup}
+        removeExercice={removeExercice}
       />
     );
   }

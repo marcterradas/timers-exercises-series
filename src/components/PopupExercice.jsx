@@ -6,15 +6,17 @@ import ActionButton from "./ActionButton";
 
 import styles from "../styles/workout.styles";
 
-const PopupExercice = ({ name, repetitions, breakTime, setShowPopup }) => {
+const PopupExercice = ({
+  name,
+  repetitions,
+  breakTime,
+  setShowPopup,
+  removeExercice,
+}) => {
   const { t } = useTranslation();
 
   function edit() {
     console.log("edit ...");
-  }
-
-  function remove() {
-    console.log("delete ...");
   }
 
   function close() {
@@ -32,7 +34,7 @@ const PopupExercice = ({ name, repetitions, breakTime, setShowPopup }) => {
         <ActionButton
           label={t("delete")}
           type="centerRemoveButton"
-          callBack={remove}
+          callBack={removeExercice}
         />
         <ActionButton
           label={t("return")}
