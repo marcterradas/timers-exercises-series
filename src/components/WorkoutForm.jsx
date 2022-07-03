@@ -45,7 +45,10 @@ const WorkoutForm = ({ callBack }) => {
   }
 
   function removeExercice(index) {
-    console.log("remove exercice ...");
+    const exercicesCopy = JSON.parse(JSON.stringify(exercices));
+    exercicesCopy.splice(index, 1);
+    setExercices(exercicesCopy);
+    setShowPopup(false);
   }
 
   const ExercicesComponents = exercices.map(
@@ -76,6 +79,7 @@ const WorkoutForm = ({ callBack }) => {
     const { name, repetitions, breakTime } = exercices[index];
     return (
       <PopupExercice
+        index={index}
         name={name}
         repetitions={repetitions}
         breakTime={breakTime}

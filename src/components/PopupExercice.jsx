@@ -7,6 +7,7 @@ import ActionButton from "./ActionButton";
 import styles from "../styles/workout.styles";
 
 const PopupExercice = ({
+  index,
   name,
   repetitions,
   breakTime,
@@ -17,6 +18,10 @@ const PopupExercice = ({
 
   function edit() {
     console.log("edit ...");
+  }
+
+  function remove() {
+    removeExercice(index);
   }
 
   function close() {
@@ -34,7 +39,7 @@ const PopupExercice = ({
         <ActionButton
           label={t("delete")}
           type="centerRemoveButton"
-          callBack={removeExercice}
+          callBack={remove}
         />
         <ActionButton
           label={t("return")}
