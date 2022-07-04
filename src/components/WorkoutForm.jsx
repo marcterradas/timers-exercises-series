@@ -91,27 +91,13 @@ const WorkoutForm = ({ callBack }) => {
 
   if (showForm) {
     return (
-      <>
-        <ScrollView style={styles.subContainer}>
-          <ExerciceForm
-            updateName={updateName}
-            updateRepetitions={updateRepetitions}
-            updateBreakTime={updateBreakTime}
-          />
-        </ScrollView>
-        <View style={styles.actionContainer}>
-          <ActionButton
-            label={t("cancel")}
-            type="backButton"
-            callBack={showButton}
-          />
-          <ActionButton
-            label={t("save")}
-            type="actionButton"
-            callBack={saveExercice}
-          />
-        </View>
-      </>
+      <ExerciceForm
+        updateName={updateName}
+        updateRepetitions={updateRepetitions}
+        updateBreakTime={updateBreakTime}
+        showButton={showButton}
+        saveExercice={saveExercice}
+      />
     );
   }
 
