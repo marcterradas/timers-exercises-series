@@ -91,21 +91,27 @@ const WorkoutForm = ({ callBack }) => {
 
   if (showForm) {
     return (
-      <ScrollView style={styles.subContainer}>
-        <View>
-          <Text style={styles.title}>{t("new_workout")}</Text>
-        </View>
-        <Input label="workout_name" callBack={updateTitle} type="default" />
-        <View style={styles.container}>
+      <>
+        <ScrollView style={styles.subContainer}>
           <ExerciceForm
             updateName={updateName}
             updateRepetitions={updateRepetitions}
             updateBreakTime={updateBreakTime}
-            showButton={showButton}
-            saveExercice={saveExercice}
+          />
+        </ScrollView>
+        <View style={styles.actionContainer}>
+          <ActionButton
+            label={t("cancel")}
+            type="backButton"
+            callBack={showButton}
+          />
+          <ActionButton
+            label={t("save")}
+            type="actionButton"
+            callBack={saveExercice}
           />
         </View>
-      </ScrollView>
+      </>
     );
   }
 
