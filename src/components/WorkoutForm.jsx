@@ -1,19 +1,12 @@
 import { React, useState } from "react";
-import { View, Text, ScrollView } from "react-native";
-import { useTranslation } from "react-i18next";
 
-import styles from "../styles/workout.styles";
 import { cleanString, cleanNumber } from "../logic/helpers";
 
-import ActionButton from "./ActionButton";
-import AddExerciceButton from "./AddExerciceButton";
-import Input from "./Input";
-import Exercice from "./Exercice";
 import PopupExercice from "./PopupExercice";
 import ExerciceForm from "./ExerciceForm";
+import ExerciceList from "./ExerciceList";
 
 const WorkoutForm = ({ callBack }) => {
-  const { t } = useTranslation();
   const [showForm, setShowForm] = useState(false);
   const [exercices, setExercices] = useState([]);
   const [showPopup, setShowPopup] = useState(false);
@@ -51,30 +44,6 @@ const WorkoutForm = ({ callBack }) => {
     setShowPopup(false);
   }
 
-  const ExercicesComponents = exercices.map(
-    ({ name, repetitions, breakTime }, index) => {
-      return (
-        <Exercice
-          key={index}
-          index={index}
-          name={name}
-          repetitions={repetitions}
-          breakTime={breakTime}
-          callBack={openExercicePopup}
-        />
-      );
-    }
-  );
-
-  const List = () => {
-    return (
-      <>
-        <AddExerciceButton callBack={fnShowForm} />
-        {ExercicesComponents}
-      </>
-    );
-  };
-
   if (showPopup) {
     const { name, repetitions, breakTime } = exercices[index];
     return (
@@ -102,29 +71,14 @@ const WorkoutForm = ({ callBack }) => {
   }
 
   return (
-    <>
-      <ScrollView style={styles.subContainer}>
-        <View>
-          <Text style={styles.title}>{t("new_workout")}</Text>
-        </View>
-        <Input label="workout_name" callBack={updateTitle} type="default" />
-        <View style={styles.container}>
-          <List />
-        </View>
-      </ScrollView>
-      <View style={styles.actionContainer}>
-        <ActionButton
-          label={t("return")}
-          type="backButton"
-          callBack={callBack}
-        />
-        <ActionButton
-          label={t("save")}
-          type="actionButton"
-          callBack={saveWorkout}
-        />
-      </View>
-    </>
+    <ExerciceList
+      updateTitle={updateTitle}
+      callBack={callBack}
+      saveWorkout={saveWorkout}
+      exercices={exercices}
+      openExercicePopup={openExercicePopup}
+      fnShowForm={fnShowForm}
+    />
   );
 };
 
