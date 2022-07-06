@@ -11,12 +11,12 @@ const WorkoutForm = ({ callBack }) => {
   const [exercices, setExercices] = useState([]);
   const [showPopup, setShowPopup] = useState(false);
   const [index, setIndex] = useState(-1);
-  let title = "";
+  const [title, setTitle] = useState("");
   let name = "";
   let repetitions = 0;
   let breakTime = 0;
 
-  const updateTitle = (value) => (title = cleanString(value));
+  const updateTitle = (value) => setTitle(cleanString(value));
   const updateName = (value) => (name = cleanString(value));
   const updateRepetitions = (value) => (repetitions = cleanNumber(value));
   const updateBreakTime = (value) => (breakTime = cleanNumber(value));
@@ -72,6 +72,7 @@ const WorkoutForm = ({ callBack }) => {
 
   return (
     <ExerciceList
+      title={title}
       updateTitle={updateTitle}
       callBack={callBack}
       saveWorkout={saveWorkout}
