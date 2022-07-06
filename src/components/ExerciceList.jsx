@@ -50,7 +50,12 @@ const ExerciceList = ({
         <View>
           <Text style={styles.title}>{t("new_workout")}</Text>
         </View>
-        <Input label="workout_name" callBack={updateTitle} type="default" />
+        <Input
+          value={title}
+          label="workout_name"
+          callBack={updateTitle}
+          type="default"
+        />
         <View style={styles.container}>
           <List />
         </View>
