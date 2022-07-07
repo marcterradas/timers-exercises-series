@@ -12,7 +12,7 @@ import styles from "../styles/workout.styles";
 const ExerciceList = ({
   title,
   updateTitle,
-  callBack,
+  changePage,
   saveWorkout,
   exercices,
   openExercicePopup,
@@ -64,7 +64,7 @@ const ExerciceList = ({
         <ActionButton
           label={t("return")}
           type="backButton"
-          callBack={callBack}
+          callBack={changePage}
         />
         <ActionButton
           label={t("save")}

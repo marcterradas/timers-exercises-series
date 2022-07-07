@@ -16,14 +16,14 @@ const WorkoutScreen = () => {
   if (page == "form") {
     return (
       <View style={styles.container}>
-        <WorkoutForm callBack={changePage} />
+        <WorkoutForm changePage={changePage} />
       </View>
     );
   }
 
   return (
     <View style={styles.container}>
-      <WorkoutList callBack={changePage} />
+      <WorkoutList changePage={changePage} />
     </View>
   );
 };

@@ -6,7 +6,7 @@ import ActionButton from "./ActionButton";
 
 import styles from "../styles/workout.styles";
 
-const WorkoutList = ({ callBack }) => {
+const WorkoutList = ({ changePage }) => {
   const { t } = useTranslation();
 
   return (
@@ -20,7 +20,7 @@ const WorkoutList = ({ callBack }) => {
         <ActionButton
           label={t("add")}
           type="actionButton"
-          callBack={callBack}
+          callBack={changePage}
         />
       </View>
     </>

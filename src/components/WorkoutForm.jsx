@@ -6,7 +6,7 @@ import PopupExercice from "./PopupExercice";
 import ExerciceForm from "./ExerciceForm";
 import ExerciceList from "./ExerciceList";
 
-const WorkoutForm = ({ callBack }) => {
+const WorkoutForm = ({ changePage }) => {
   const [showForm, setShowForm] = useState(false);
   const [exercices, setExercices] = useState([]);
   const [showPopup, setShowPopup] = useState(false);
@@ -74,7 +74,7 @@ const WorkoutForm = ({ callBack }) => {
     <ExerciceList
       title={title}
       updateTitle={updateTitle}
-      callBack={callBack}
+      changePage={changePage}
       saveWorkout={saveWorkout}
       exercices={exercices}
       openExercicePopup={openExercicePopup}
