@@ -8,6 +8,9 @@ import ActionButton from "./ActionButton";
 import styles from "../styles/workout.styles";
 
 const ExerciceForm = ({
+  name,
+  repetitions,
+  breakTime,
   updateName,
   updateRepetitions,
   updateBreakTime,
@@ -20,13 +23,24 @@ const ExerciceForm = ({
     <>
       <ScrollView style={styles.subContainer}>
         <View>
-          <Input label="exercice_name" callBack={updateName} type="default" />
           <Input
+            value={name}
+            label="exercice_name"
+            callBack={updateName}
+            type="default"
+          />
+          <Input
+            value={repetitions}
             label="number_repetitions"
             callBack={updateRepetitions}
             type="numeric"
           />
-          <Input label="break_time" callBack={updateBreakTime} type="numeric" />
+          <Input
+            value={breakTime}
+            label="break_time"
+            callBack={updateBreakTime}
+            type="numeric"
+          />
         </View>
       </ScrollView>
       <View style={styles.actionContainer}>

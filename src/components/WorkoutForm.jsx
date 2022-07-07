@@ -12,14 +12,14 @@ const WorkoutForm = ({ changePage }) => {
   const [showPopup, setShowPopup] = useState(false);
   const [index, setIndex] = useState(-1);
   const [title, setTitle] = useState("");
-  let name = "";
-  let repetitions = 0;
-  let breakTime = 0;
+  const [name, setName] = useState("");
+  const [repetitions, setRepetitions] = useState(0);
+  const [breakTime, setBreakTime] = useState(0);
 
   const updateTitle = (value) => setTitle(cleanString(value));
-  const updateName = (value) => (name = cleanString(value));
-  const updateRepetitions = (value) => (repetitions = cleanNumber(value));
-  const updateBreakTime = (value) => (breakTime = cleanNumber(value));
+  const updateName = (value) => setName(cleanString(value));
+  const updateRepetitions = (value) => setRepetitions(cleanNumber(value));
+  const updateBreakTime = (value) => setBreakTime(cleanNumber(value));
   const fnShowForm = () => setShowForm(true);
   const showButton = () => setShowForm(false);
 
@@ -61,6 +61,9 @@ const WorkoutForm = ({ changePage }) => {
   if (showForm) {
     return (
       <ExerciceForm
+        name={name}
+        repetitions={repetitions}
+        breakTime={breakTime}
         updateName={updateName}
         updateRepetitions={updateRepetitions}
         updateBreakTime={updateBreakTime}
