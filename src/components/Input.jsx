@@ -5,6 +5,7 @@ import { t } from "i18next";
 import styles from "../styles/workout.styles";
 
 const Input = ({ label, callBack, type, value = "" }) => {
+  value = value.toString();
   return (
     <View style={styles.containerJustifyLeft}>
       <Text style={styles.label}>{t(label)}</Text>

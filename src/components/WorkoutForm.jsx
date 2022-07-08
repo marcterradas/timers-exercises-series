@@ -13,8 +13,8 @@ const WorkoutForm = ({ changePage }) => {
   const [index, setIndex] = useState(-1);
   const [title, setTitle] = useState("");
   const [name, setName] = useState("");
-  const [repetitions, setRepetitions] = useState(0);
-  const [breakTime, setBreakTime] = useState(0);
+  const [repetitions, setRepetitions] = useState("");
+  const [breakTime, setBreakTime] = useState("");
 
   const updateTitle = (value) => setTitle(cleanString(value));
   const updateName = (value) => setName(cleanString(value));
