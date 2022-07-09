@@ -33,6 +33,9 @@ const WorkoutForm = ({ changePage }) => {
       breakTime: cleanNumber(breakTime),
     };
     exercices.push(data);
+    setName("");
+    setRepetitions("");
+    setBreakTime("");
     showButton();
   }
 
