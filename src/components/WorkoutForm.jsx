@@ -19,23 +19,41 @@ const WorkoutForm = ({ changePage }) => {
   const fnShowForm = () => setShowForm(true);
   const showButton = () => setShowForm(false);
 
+  function resetVariables() {
+    setName("");
+    setRepetitions("");
+    setBreakTime("");
+  }
+
   function saveWorkout() {
     const data = {
       title: cleanString(title),
     };
-    console.log(data);
   }
 
   function saveExercice() {
-    const data = {
+    const exercicesCopy = JSON.parse(JSON.stringify(exercices));
+
+    exercicesCopy.push({
       name: cleanString(name),
       repetitions: cleanNumber(repetitions),
       breakTime: cleanNumber(breakTime),
+    });
+    setExercices(exercicesCopy);
+    resetVariables();
+    showButton();
+  }
+
+  function editExercice({ _name, _repetitions, _breakTime }) {
+    const exercicesCopy = JSON.parse(JSON.stringify(exercices));
+
+    exercicesCopy[index] = {
+      name: cleanString(_name),
+      repetitions: cleanNumber(_repetitions),
+      breakTime: cleanNumber(_breakTime),
     };
-    exercices.push(data);
-    setName("");
-    setRepetitions("");
-    setBreakTime("");
+    setExercices(exercicesCopy);
+    resetVariables();
     showButton();
   }
 
@@ -44,23 +62,22 @@ const WorkoutForm = ({ changePage }) => {
     setShowPopup(true);
   }
 
-  function removeExercice(index) {
+  function removeExercice() {
     const exercicesCopy = JSON.parse(JSON.stringify(exercices));
     exercicesCopy.splice(index, 1);
     setExercices(exercicesCopy);
-    setShowPopup(false);
   }
 
   if (showPopup) {
     const { name, repetitions, breakTime } = exercices[index];
     return (
       <PopupExercice
-        index={index}
         name={name}
         repetitions={repetitions}
         breakTime={breakTime}
         setShowPopup={setShowPopup}
         removeExercice={removeExercice}
+        editExercice={editExercice}
       />
     );
   }
