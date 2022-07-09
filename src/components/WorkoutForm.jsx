@@ -16,9 +16,6 @@ const WorkoutForm = ({ changePage }) => {
   const [repetitions, setRepetitions] = useState("");
   const [breakTime, setBreakTime] = useState("");
 
-  const updateName = (value) => setName(cleanString(value));
-  const updateRepetitions = (value) => setRepetitions(cleanNumber(value));
-  const updateBreakTime = (value) => setBreakTime(cleanNumber(value));
   const fnShowForm = () => setShowForm(true);
   const showButton = () => setShowForm(false);
 
@@ -30,7 +27,12 @@ const WorkoutForm = ({ changePage }) => {
   }
 
   function saveExercice() {
-    exercices.push({ name, repetitions, breakTime });
+    const data = {
+      name: cleanString(name),
+      repetitions: cleanNumber(repetitions),
+      breakTime: cleanNumber(breakTime),
+    };
+    exercices.push(data);
     showButton();
   }
 
@@ -66,9 +68,9 @@ const WorkoutForm = ({ changePage }) => {
         name={name}
         repetitions={repetitions}
         breakTime={breakTime}
-        updateName={updateName}
-        updateRepetitions={updateRepetitions}
-        updateBreakTime={updateBreakTime}
+        setName={setName}
+        setRepetitions={setRepetitions}
+        setBreakTime={setBreakTime}
         showButton={showButton}
         saveExercice={saveExercice}
       />

@@ -11,9 +11,9 @@ const ExerciceForm = ({
   name,
   repetitions,
   breakTime,
-  updateName,
-  updateRepetitions,
-  updateBreakTime,
+  setName,
+  setRepetitions,
+  setBreakTime,
   showButton,
   saveExercice,
 }) => {
@@ -26,19 +26,19 @@ const ExerciceForm = ({
           <Input
             value={name}
             label="exercice_name"
-            callBack={updateName}
+            callBack={setName}
             type="default"
           />
           <Input
             value={repetitions}
             label="number_repetitions"
-            callBack={updateRepetitions}
+            callBack={setRepetitions}
             type="numeric"
           />
           <Input
             value={breakTime}
             label="break_time"
-            callBack={updateBreakTime}
+            callBack={setBreakTime}
             type="numeric"
           />
         </View>
