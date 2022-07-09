@@ -11,7 +11,7 @@ import styles from "../styles/workout.styles";
 
 const ExerciceList = ({
   title,
-  updateTitle,
+  setTitle,
   changePage,
   saveWorkout,
   exercices,
@@ -53,7 +53,7 @@ const ExerciceList = ({
         <Input
           value={title}
           label="workout_name"
-          callBack={updateTitle}
+          callBack={setTitle}
           type="default"
         />
         <View style={styles.container}>

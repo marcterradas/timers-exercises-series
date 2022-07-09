@@ -16,7 +16,6 @@ const WorkoutForm = ({ changePage }) => {
   const [repetitions, setRepetitions] = useState("");
   const [breakTime, setBreakTime] = useState("");
 
-  const updateTitle = (value) => setTitle(cleanString(value));
   const updateName = (value) => setName(cleanString(value));
   const updateRepetitions = (value) => setRepetitions(cleanNumber(value));
   const updateBreakTime = (value) => setBreakTime(cleanNumber(value));
@@ -24,7 +23,10 @@ const WorkoutForm = ({ changePage }) => {
   const showButton = () => setShowForm(false);
 
   function saveWorkout() {
-    console.log("save workout ...");
+    const data = {
+      title: cleanString(title),
+    };
+    console.log(data);
   }
 
   function saveExercice() {
@@ -76,7 +78,7 @@ const WorkoutForm = ({ changePage }) => {
   return (
     <ExerciceList
       title={title}
-      updateTitle={updateTitle}
+      setTitle={setTitle}
       changePage={changePage}
       saveWorkout={saveWorkout}
       exercices={exercices}
