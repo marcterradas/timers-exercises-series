@@ -1,7 +1,27 @@
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
 export function getWorkouts() {
   return true;
 }
 
-export function saveWorkout(workout) {
-  console.log(workout.title);
+export async function getWrokout(id) {
+  let result = false;
+  try {
+    result = await AsyncStorage.getItem(id);
+  } catch (error) {
+    console.error(error);
+  }
+  return result;
+}
+
+export async function saveWorkout(workout) {
+  let result = false;
+  try {
+    const id = Date.now().toString();
+    await AsyncStorage.setItem(id, JSON.stringify(workout));
+    result = id;
+  } catch (error) {
+    console.error(error);
+  }
+  return result;
 }

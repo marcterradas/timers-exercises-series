@@ -1,6 +1,7 @@
 import { React, useState } from "react";
 
 import { cleanString, cleanNumber } from "../logic/helpers";
+import { saveWorkout } from "../logic/workout";
 
 import PopupExercice from "./PopupExercice";
 import ExerciceForm from "./ExerciceForm";
@@ -25,10 +26,12 @@ const WorkoutForm = ({ changePage }) => {
     setBreakTime("");
   }
 
-  function saveWorkout() {
-    const data = {
+  function save() {
+    saveWorkout({
       title: cleanString(title),
-    };
+      exercices,
+    });
+    changePage();
   }
 
   function saveExercice() {
@@ -102,7 +105,7 @@ const WorkoutForm = ({ changePage }) => {
       title={title}
       setTitle={setTitle}
       changePage={changePage}
-      saveWorkout={saveWorkout}
+      saveWorkout={save}
       exercices={exercices}
       openExercicePopup={openExercicePopup}
       fnShowForm={fnShowForm}
