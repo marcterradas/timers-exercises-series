@@ -25,3 +25,14 @@ export async function saveWorkout(workout) {
   }
   return result;
 }
+
+export async function clear() {
+  let result = true;
+  try {
+    await AsyncStorage.clear();
+  } catch (error) {
+    console.error(error);
+    result = false;
+  }
+  return result;
+}
