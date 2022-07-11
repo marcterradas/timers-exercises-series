@@ -56,6 +56,13 @@ const styles = StyleSheet.create({
     width: "50%",
     marginBottom: 10,
   },
+  centerBigButtonContainer: {
+    height: 40,
+    alignSelf: "center",
+    alignItems: "center",
+    width: "100%",
+    marginBottom: 10,
+  },
 });
 
 export default styles;
