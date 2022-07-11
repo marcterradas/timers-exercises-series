@@ -9,6 +9,9 @@ const styles = StyleSheet.create({
     marginTop: 10,
     backgroundColor: COLORS.WHITE,
   },
+  item: {
+    marginBottom: 20,
+  },
 });
 
 export default styles;
