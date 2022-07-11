@@ -20,7 +20,7 @@ const SettingsScreen = () => {
       <View style={styles.item}>
         <ActionButton
           label={t("delete")}
-          type="centerRemoveButton"
+          type="centerBigRemoveButton"
           callBack={clear}
         />
       </View>
