@@ -10,6 +10,7 @@ const ActionButton = ({ type, callBack, label }) => {
     centerActionButton: "centerButtonContainer",
     centerBackButton: "centerButtonContainer",
     centerRemoveButton: "centerButtonContainer",
+    centerBigRemoveButton: "centerBigButtonContainer",
   };
   const buttonTypes = {
     actionButton: "actionButton",
@@ -17,6 +18,7 @@ const ActionButton = ({ type, callBack, label }) => {
     centerActionButton: "actionButton",
     centerBackButton: "backButton",
     centerRemoveButton: "removeButton",
+    centerBigRemoveButton: "removeButton",
   };
 
   const buttonContainer = containerTypes[type];
