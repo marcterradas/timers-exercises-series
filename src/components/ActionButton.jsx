@@ -1,6 +1,6 @@
 import { React } from "react";
 import { TouchableOpacity, Text, View } from "react-native";
-import styles from "../styles/workout.styles";
+import styles from "../styles/button.styles";
 import { t } from "i18next";
 
 const ActionButton = ({ type, callBack, label }) => {
