@@ -45,61 +45,10 @@ const styles = StyleSheet.create({
     alignSelf: "stretch",
     padding: 10,
   },
-  actionButtonContainer: {
-    paddingLeft: 5,
-    height: 40,
-    alignSelf: "stretch",
-    alignItems: "center",
-    width: "50%",
-  },
-  backButtonContainer: {
-    paddingRight: 5,
-    height: 40,
-    alignSelf: "stretch",
-    alignItems: "center",
-    width: "50%",
-  },
-  centerButtonContainer: {
-    height: 40,
-    alignSelf: "center",
-    alignItems: "center",
-    width: "50%",
-    marginBottom: 10,
-  },
   actionContainer: {
     padding: 20,
     alignSelf: "flex-end",
     flexDirection: "row",
-  },
-  actionButton: {
-    height: 40,
-    padding: 10,
-    borderRadius: 4,
-    borderColor: COLORS.GRAY,
-    backgroundColor: COLORS.YELLOW,
-    alignSelf: "flex-end",
-    alignItems: "center",
-    width: "100%",
-  },
-  backButton: {
-    height: 40,
-    padding: 10,
-    borderRadius: 4,
-    borderColor: COLORS.GRAY,
-    backgroundColor: COLORS.WHITE,
-    alignSelf: "flex-end",
-    alignItems: "center",
-    width: "100%",
-  },
-  removeButton: {
-    height: 40,
-    padding: 10,
-    borderRadius: 4,
-    borderColor: COLORS.GRAY,
-    backgroundColor: COLORS.RED,
-    alignSelf: "flex-end",
-    alignItems: "center",
-    width: "100%",
   },
   bigButton: {
     height: 80,
@@ -122,9 +71,6 @@ const styles = StyleSheet.create({
   exerciceTitle: {
     fontWeight: "bold",
     fontSize: 16,
-  },
-  buttonText: {
-    fontWeight: "bold",
   },
 });
 
