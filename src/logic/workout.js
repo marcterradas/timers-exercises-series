@@ -1,7 +1,14 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-export function getWorkouts() {
-  return true;
+export async function getWorkouts() {
+  let keys = [];
+  try {
+    keys = await AsyncStorage.getAllKeys();
+  } catch (e) {
+    // read key error
+  }
+
+  console.log(keys);
 }
 
 export async function getWrokout(id) {
