@@ -3,7 +3,7 @@ import { Text, TouchableOpacity } from "react-native";
 import IonIcon from "react-native-vector-icons/Ionicons";
 import { t } from "i18next";
 
-import styles from "../styles/workout.styles";
+import styles from "../styles/button.styles";
 
 const AddExerciceButton = ({ callBack }) => {
   const icon = {
