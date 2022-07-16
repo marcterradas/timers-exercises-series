@@ -6,15 +6,31 @@ import { getWorkouts } from "../logic/workout";
 
 import WorkoutElement from "./WorkoutElement";
 import ActionButton from "./ActionButton";
+import WorkoutForm from "./WorkoutForm";
 
 import styles from "../styles/workout.styles";
 
 const WorkoutList = ({ changePage }) => {
   const { t } = useTranslation();
-  const [workouts, setWorkouts] = useState([]);
+  const [workoutsElements, setWorkoutsElements] = useState([]);
+  const [selectedWorkout, setSelectedWorkout] = useState(false);
 
-  function openWorkout(index) {
-    console.log("open workout ...");
+  const returnToList = () => setSelectedWorkout(false);
+
+  async function openWorkout(index) {
+    const workouts = await getWorkouts();
+    let [id, workout] = workouts[index];
+    workout = Object.values(JSON.parse(workout));
+    const [title, exercices] = workout;
+    const workoutElement = (
+      <WorkoutElement
+        changePage={returnToList}
+        propId={id}
+        propTitle={title}
+        exercices={exercices}
+      />
+    );
+    setSelectedWorkout(workoutElement);
   }
 
   useEffect(async () => {
@@ -36,7 +52,7 @@ const WorkoutList = ({ changePage }) => {
       );
       workoutElements.push(workoutElement);
     }
-    setWorkouts(workoutElements);
+    setWorkoutsElements(workoutElements);
   }, []);
 
   return (
@@ -45,7 +61,7 @@ const WorkoutList = ({ changePage }) => {
         <View>
           <Text style={styles.title}>{t("workout_list")}</Text>
         </View>
-        <View>{workouts}</View>
+        <View>{workoutsElements}</View>
       </ScrollView>
       <View style={styles.actionContainer}>
         <ActionButton
