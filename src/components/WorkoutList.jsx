@@ -23,7 +23,7 @@ const WorkoutList = ({ changePage }) => {
     workout = Object.values(JSON.parse(workout));
     const [title, exercices] = workout;
     const workoutElement = (
-      <WorkoutElement
+      <WorkoutForm
         changePage={returnToList}
         propId={id}
         propTitle={title}
@@ -54,6 +54,10 @@ const WorkoutList = ({ changePage }) => {
     }
     setWorkoutsElements(workoutElements);
   }, []);
+
+  if (selectedWorkout) {
+    return selectedWorkout;
+  }
 
   return (
     <>
