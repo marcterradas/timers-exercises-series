@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 
 import { cleanString, cleanNumber } from "../logic/helpers";
 import { saveWorkout } from "../logic/workout";
@@ -7,7 +7,12 @@ import PopupExercice from "./PopupExercice";
 import ExerciceForm from "./ExerciceForm";
 import ExerciceList from "./ExerciceList";
 
-const WorkoutForm = ({ changePage, propId, propTitle, propExercices }) => {
+const WorkoutForm = ({
+  changePage,
+  propId = false,
+  propTitle = "",
+  propExercices = [],
+}) => {
   const [showForm, setShowForm] = useState(false);
   const [exercices, setExercices] = useState([]);
   const [showPopup, setShowPopup] = useState(false);
@@ -20,6 +25,11 @@ const WorkoutForm = ({ changePage, propId, propTitle, propExercices }) => {
   const fnShowForm = () => setShowForm(true);
   const showButton = () => setShowForm(false);
 
+  useEffect(() => {
+    setTitle(propTitle);
+    setExercices(propExercices);
+  }, []);
+
   function resetVariables() {
     setName("");
     setRepetitions("");
@@ -28,6 +38,7 @@ const WorkoutForm = ({ changePage, propId, propTitle, propExercices }) => {
 
   function save() {
     saveWorkout({
+      id: propId,
       title: cleanString(title),
       exercices,
     });

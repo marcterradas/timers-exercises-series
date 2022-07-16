@@ -19,15 +19,18 @@ const WorkoutList = ({ changePage }) => {
 
   async function openWorkout(index) {
     const workouts = await getWorkouts();
+
     let [id, workout] = workouts[index];
     workout = Object.values(JSON.parse(workout));
-    const [title, exercices] = workout;
+
+    let [title, exercices] = workout;
+
     const workoutElement = (
       <WorkoutForm
         changePage={returnToList}
         propId={id}
         propTitle={title}
-        exercices={exercices}
+        propExercices={exercices}
       />
     );
     setSelectedWorkout(workoutElement);
