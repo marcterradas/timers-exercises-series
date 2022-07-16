@@ -4,8 +4,11 @@ import { TouchableOpacity, Text } from "react-native";
 import styles from "../styles/button.styles";
 
 const WorkoutElement = ({ index, title, callBack }) => {
+  function handeCallBack() {
+    callBack(index);
+  }
   return (
-    <TouchableOpacity onPress={callBack} style={styles.bigButton}>
+    <TouchableOpacity onPress={handeCallBack} style={styles.bigButton}>
       <Text style={styles.buttonTitleText}>{title}</Text>
     </TouchableOpacity>
   );
