@@ -28,8 +28,11 @@ export async function getWrokout(id) {
 export async function saveWorkout({ id, title, exercices }) {
   let result = false;
   try {
-    result = id ? id : Date.now().toString();
-    await AsyncStorage.setItem(id, JSON.stringify({ title, exercices }));
+    if (exercices.length > 0) {
+      id = id ? id : Date.now().toString();
+      result = id;
+      await AsyncStorage.setItem(id, JSON.stringify({ title, exercices }));
+    }
   } catch (error) {
     console.error(error);
   }
