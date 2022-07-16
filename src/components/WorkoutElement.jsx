@@ -1,12 +1,13 @@
 import { React } from "react";
-import { View, Text } from "react-native";
+import { TouchableOpacity, Text } from "react-native";
 
-const WorkoutElement = ({ id, title }) => {
-  console.log(id, title);
+import styles from "../styles/button.styles";
+
+const WorkoutElement = ({ index, title, callBack }) => {
   return (
-    <View>
-      <Text>{title}</Text>
-    </View>
+    <TouchableOpacity onPress={callBack} style={styles.bigButton}>
+      <Text style={styles.buttonTitleText}>{title}</Text>
+    </TouchableOpacity>
   );
 };
 
