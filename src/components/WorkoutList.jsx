@@ -13,6 +13,10 @@ const WorkoutList = ({ changePage }) => {
   const { t } = useTranslation();
   const [workouts, setWorkouts] = useState([]);
 
+  function openWorkout(index) {
+    console.log("open workout ...");
+  }
+
   useEffect(async () => {
     const workouts = await getWorkouts();
     const workoutElements = [];
@@ -22,7 +26,14 @@ const WorkoutList = ({ changePage }) => {
       workout = Object.values(JSON.parse(workout));
 
       const [title, exercices] = workout;
-      const workoutElement = <WorkoutElement key={id} id={id} title={title} />;
+      const workoutElement = (
+        <WorkoutElement
+          key={id}
+          index={index}
+          title={title}
+          callBack={openWorkout}
+        />
+      );
       workoutElements.push(workoutElement);
     }
     setWorkouts(workoutElements);
