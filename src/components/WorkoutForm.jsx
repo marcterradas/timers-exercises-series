@@ -7,7 +7,7 @@ import PopupExercice from "./PopupExercice";
 import ExerciceForm from "./ExerciceForm";
 import ExerciceList from "./ExerciceList";
 
-const WorkoutForm = ({ changePage }) => {
+const WorkoutForm = ({ changePage, propId, propTitle, propExercices }) => {
   const [showForm, setShowForm] = useState(false);
   const [exercices, setExercices] = useState([]);
   const [showPopup, setShowPopup] = useState(false);
