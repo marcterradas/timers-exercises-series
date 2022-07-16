@@ -50,15 +50,6 @@ const styles = StyleSheet.create({
     alignSelf: "flex-end",
     flexDirection: "row",
   },
-  bigButton: {
-    height: 80,
-    padding: 10,
-    borderRadius: 4,
-    borderColor: COLORS.GRAY,
-    backgroundColor: COLORS.BLUE,
-    alignSelf: "stretch",
-    alignItems: "center",
-  },
   exerciceButton: {
     height: 80,
     padding: 10,

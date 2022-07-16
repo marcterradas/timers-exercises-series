@@ -5,6 +5,10 @@ const styles = StyleSheet.create({
   buttonText: {
     fontWeight: "bold",
   },
+  buttonTitleText: {
+    fontWeight: "bold",
+    fontSize: 16,
+  },
   actionButton: {
     height: 40,
     padding: 10,
@@ -34,6 +38,16 @@ const styles = StyleSheet.create({
     alignSelf: "flex-end",
     alignItems: "center",
     width: "100%",
+  },
+  bigButton: {
+    height: 80,
+    padding: 10,
+    borderRadius: 4,
+    borderColor: COLORS.GRAY,
+    backgroundColor: COLORS.BLUE,
+    alignSelf: "stretch",
+    alignItems: "center",
+    justifyContent: "center",
   },
   actionButtonContainer: {
     paddingLeft: 5,
