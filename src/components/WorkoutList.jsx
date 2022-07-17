@@ -13,9 +13,16 @@ import styles from "../styles/workout.styles";
 const WorkoutList = ({ changePage }) => {
   const { t } = useTranslation();
   const [workoutsElements, setWorkoutsElements] = useState([]);
-  const [selectedWorkout, setSelectedWorkout] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
+  const [selectedWorkoutIndex, setSelectedWorkoutIndex] = useState(false);
+  const [selectedWorkoutElement, setSelectedWorkoutElement] = useState(false);
 
-  const returnToList = () => setSelectedWorkout(false);
+  const edit = () => setShowPopup(false);
+  const returnToList = () => setSelectedWorkoutElement(false);
+
+  async function remove() {
+    console.log(selectedWorkoutIndex);
+  }
 
   async function openWorkout(index) {
     const workouts = await getWorkouts();
@@ -33,10 +40,13 @@ const WorkoutList = ({ changePage }) => {
         propExercices={exercices}
       />
     );
-    setSelectedWorkout(workoutElement);
+
+    setSelectedWorkoutIndex(index);
+    setShowPopup(true);
+    setSelectedWorkoutElement(workoutElement);
   }
 
-  useEffect(async () => {
+  async function loadWorkouts() {
     const workouts = await getWorkouts();
     const workoutElements = [];
 
@@ -56,10 +66,34 @@ const WorkoutList = ({ changePage }) => {
       workoutElements.push(workoutElement);
     }
     setWorkoutsElements(workoutElements);
-  }, []);
+  }
 
-  if (selectedWorkout) {
-    return selectedWorkout;
+  useEffect(loadWorkouts, []);
+
+  if (showPopup) {
+    return (
+      <View style={styles.container}>
+        <ActionButton
+          label={t("edit")}
+          type="centerActionButton"
+          callBack={edit}
+        />
+        <ActionButton
+          label={t("delete")}
+          type="centerRemoveButton"
+          callBack={remove}
+        />
+        <ActionButton
+          label={t("return")}
+          type="centerBackButton"
+          callBack={returnToList}
+        />
+      </View>
+    );
+  }
+
+  if (selectedWorkoutElement) {
+    return selectedWorkoutElement;
   }
 
   return (
