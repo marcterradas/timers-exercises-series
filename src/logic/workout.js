@@ -39,6 +39,23 @@ export async function saveWorkout({ id, title, exercices }) {
 }
 
 /**
+ * Remove item from device storage
+ * @param {String} id
+ * @returns true if all okey or false if error
+ */
+export async function remove(id) {
+  let result = false;
+  try {
+    await AsyncStorage.removeItem(id);
+    result = true;
+  } catch (error) {
+    console.error(error);
+  }
+
+  return result;
+}
+
+/**
  * clear device storage
  * @returns true if all okey or false if error
  */
