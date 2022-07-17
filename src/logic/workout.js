@@ -1,5 +1,9 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
+/**
+ * Get workouts from device storage
+ * @returns array with workouts or false if error occurs
+ */
 export async function getWorkouts() {
   let keys,
     workouts = [];
@@ -15,16 +19,11 @@ export async function getWorkouts() {
   return workouts;
 }
 
-export async function getWrokout(id) {
-  let result = false;
-  try {
-    result = await AsyncStorage.getItem(id);
-  } catch (error) {
-    console.error(error);
-  }
-  return result;
-}
-
+/**
+ * Save workout to device storage
+ * @param {Object} param0 with parameters id: string (optional for edit), title: string and exercices: array<Exercices>
+ * @returns generated id or false if error
+ */
 export async function saveWorkout({ id, title, exercices }) {
   let result = false;
   try {
@@ -39,6 +38,10 @@ export async function saveWorkout({ id, title, exercices }) {
   return result;
 }
 
+/**
+ * clear device storage
+ * @returns true if all okey or false if error
+ */
 export async function clear() {
   let result = true;
   try {
