@@ -14,20 +14,20 @@ const WorkoutList = ({ changePage }) => {
   const { t } = useTranslation();
   const [workoutsElements, setWorkoutsElements] = useState([]);
   const [showPopup, setShowPopup] = useState(false);
-  const [selectedWorkoutIndex, setSelectedWorkoutIndex] = useState(false);
+  const [selectedWorkoutId, setSelectedWorkoutId] = useState(false);
   const [selectedWorkoutElement, setSelectedWorkoutElement] = useState(false);
 
   const edit = () => setShowPopup(false);
   const returnToList = () => setSelectedWorkoutElement(false);
 
   function closePopup() {
-    setSelectedWorkoutIndex(false);
+    setSelectedWorkoutId(false);
     setShowPopup(false);
     setSelectedWorkoutElement(false);
   }
 
   async function remove() {
-    await removeWorkout(selectedWorkoutIndex);
+    await removeWorkout(selectedWorkoutId);
     closePopup();
     loadWorkouts();
   }
@@ -49,7 +49,7 @@ const WorkoutList = ({ changePage }) => {
       />
     );
 
-    setSelectedWorkoutIndex(index);
+    setSelectedWorkoutId(id);
     setShowPopup(true);
     setSelectedWorkoutElement(workoutElement);
   }
