@@ -2,7 +2,7 @@ import { React, useEffect, useState } from "react";
 import { View, Text, ScrollView } from "react-native";
 import { useTranslation } from "react-i18next";
 
-import { getWorkouts, removeWorkouts } from "../logic/workout";
+import { getWorkouts, removeWorkout } from "../logic/workout";
 
 import WorkoutElement from "./WorkoutElement";
 import ActionButton from "./ActionButton";
@@ -27,7 +27,7 @@ const WorkoutList = ({ changePage }) => {
   }
 
   async function remove() {
-    removeWorkouts(selectedWorkoutIndex);
+    await removeWorkout(selectedWorkoutIndex);
     closePopup();
     loadWorkouts();
   }
