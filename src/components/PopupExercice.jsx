@@ -52,25 +52,23 @@ const PopupExercice = ({
   }
 
   return (
-    <>
-      <View style={styles.container}>
-        <ActionButton
-          label={t("edit")}
-          type="centerActionButton"
-          callBack={edit}
-        />
-        <ActionButton
-          label={t("delete")}
-          type="centerRemoveButton"
-          callBack={remove}
-        />
-        <ActionButton
-          label={t("return")}
-          type="centerBackButton"
-          callBack={close}
-        />
-      </View>
-    </>
+    <View style={styles.container}>
+      <ActionButton
+        label={t("edit")}
+        type="centerActionButton"
+        callBack={edit}
+      />
+      <ActionButton
+        label={t("delete")}
+        type="centerRemoveButton"
+        callBack={remove}
+      />
+      <ActionButton
+        label={t("return")}
+        type="centerBackButton"
+        callBack={close}
+      />
+    </View>
   );
 };
 
