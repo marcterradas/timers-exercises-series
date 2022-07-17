@@ -2,7 +2,7 @@ import { React, useEffect, useState } from "react";
 import { View, Text, ScrollView } from "react-native";
 import { useTranslation } from "react-i18next";
 
-import { getWorkouts } from "../logic/workout";
+import { getWorkouts, removeWorkouts } from "../logic/workout";
 
 import WorkoutElement from "./WorkoutElement";
 import ActionButton from "./ActionButton";
@@ -20,8 +20,16 @@ const WorkoutList = ({ changePage }) => {
   const edit = () => setShowPopup(false);
   const returnToList = () => setSelectedWorkoutElement(false);
 
+  function closePopup() {
+    setSelectedWorkoutIndex(false);
+    setShowPopup(false);
+    setSelectedWorkoutElement(false);
+  }
+
   async function remove() {
-    console.log(selectedWorkoutIndex);
+    removeWorkouts(selectedWorkoutIndex);
+    closePopup();
+    loadWorkouts();
   }
 
   async function openWorkout(index) {
@@ -86,7 +94,7 @@ const WorkoutList = ({ changePage }) => {
         <ActionButton
           label={t("return")}
           type="centerBackButton"
-          callBack={returnToList}
+          callBack={closePopup}
         />
       </View>
     );

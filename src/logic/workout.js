@@ -43,7 +43,7 @@ export async function saveWorkout({ id, title, exercices }) {
  * @param {String} id
  * @returns true if all okey or false if error
  */
-export async function remove(id) {
+export async function removeWorkouts(id) {
   let result = false;
   try {
     await AsyncStorage.removeItem(id);
