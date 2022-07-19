@@ -1,11 +1,15 @@
 import { React, useEffect, useState } from "react";
-import { View, Text } from "react-native";
+import { ScrollView, View, Text } from "react-native";
+import { useTranslation } from "react-i18next";
 
 import WorkoutElement from "../components/WorkoutElement";
 
 import { getWorkouts } from "../logic/workout";
 
+import styles from "../styles/workout.styles";
+
 const TimerScreen = () => {
+  const { t } = useTranslation();
   const [workoutsElements, setWorkoutsElements] = useState([]);
 
   async function openWorkout(index) {}
@@ -35,8 +39,13 @@ const TimerScreen = () => {
   useEffect(loadWorkouts, []);
 
   return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>Timer Screen ...</Text>
+    <View style={styles.container}>
+      <ScrollView style={styles.subContainer}>
+        <View>
+          <Text style={styles.title}>{t("workout_list")}</Text>
+        </View>
+        <View>{workoutsElements}</View>
+      </ScrollView>
     </View>
   );
 };
