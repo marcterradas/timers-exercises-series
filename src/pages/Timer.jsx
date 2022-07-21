@@ -12,7 +12,13 @@ const TimerScreen = () => {
   const { t } = useTranslation();
   const [workoutsElements, setWorkoutsElements] = useState([]);
 
-  async function openWorkout(index) {}
+  async function openWorkout(index) {
+    const workouts = await getWorkouts();
+
+    let [id, workout] = workouts[index];
+    workout = Object.values(JSON.parse(workout));
+    console.log(workout);
+  }
 
   async function loadWorkouts() {
     const workouts = await getWorkouts();
