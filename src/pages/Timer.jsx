@@ -11,13 +11,14 @@ import styles from "../styles/workout.styles";
 const TimerScreen = () => {
   const { t } = useTranslation();
   const [workoutsElements, setWorkoutsElements] = useState([]);
+  const [selectedWorkout, setSelectedWorkout] = useState(false);
 
   async function openWorkout(index) {
     const workouts = await getWorkouts();
 
     let [id, workout] = workouts[index];
     workout = Object.values(JSON.parse(workout));
-    console.log(workout);
+    setSelectedWorkout(workout);
   }
 
   async function loadWorkouts() {
@@ -43,6 +44,14 @@ const TimerScreen = () => {
   }
 
   useEffect(loadWorkouts, []);
+
+  if (selectedWorkout) {
+    return (
+      <View>
+        <Text>todo workout timer element ...</Text>
+      </View>
+    );
+  }
 
   return (
     <View style={styles.container}>
