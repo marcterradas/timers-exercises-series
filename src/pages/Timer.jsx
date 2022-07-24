@@ -3,6 +3,7 @@ import { ScrollView, View, Text } from "react-native";
 import { useTranslation } from "react-i18next";
 
 import WorkoutElement from "../components/WorkoutElement";
+import WorkoutTimer from "../components/WorkoutTimer";
 
 import { getWorkouts } from "../logic/workout";
 
@@ -46,11 +47,7 @@ const TimerScreen = () => {
   useEffect(loadWorkouts, []);
 
   if (selectedWorkout) {
-    return (
-      <View>
-        <Text>todo workout timer element ...</Text>
-      </View>
-    );
+    return <WorkoutTimer workout={selectedWorkout} />;
   }
 
   return (
