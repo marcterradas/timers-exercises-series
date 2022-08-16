@@ -12,13 +12,17 @@ import styles from "../styles/timers.styles";
 const TimerScreen = () => {
   const { t } = useTranslation();
   const [workoutsElements, setWorkoutsElements] = useState([]);
-  const [selectedWorkout, setSelectedWorkout] = useState("");
+  const [selectedWorkout, setSelectedWorkout] = useState(false);
 
   async function openWorkout(index) {
     const workouts = await getWorkouts();
     let [id, workout] = workouts[index];
     workout = Object.values(JSON.parse(workout));
     setSelectedWorkout(workout);
+  }
+
+  function closeWorkout() {
+    setSelectedWorkout(false);
   }
 
   async function loadWorkouts() {
@@ -48,7 +52,7 @@ const TimerScreen = () => {
   if (selectedWorkout) {
     return (
       <View style={styles.container}>
-        <WorkoutTimer workout={selectedWorkout} />
+        <WorkoutTimer workout={selectedWorkout} callBack={setSelectedWorkout} />
       </View>
     );
   }
