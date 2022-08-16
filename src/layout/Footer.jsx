@@ -3,8 +3,8 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { useTranslation } from "react-i18next";
 
-import Workout from "../pages/Workout";
-import Timer from "../pages/Timer";
+import Workouts from "../pages/Workouts";
+import Timers from "../pages/Timers";
 import Settings from "../pages/Settings";
 
 const Tab = createBottomTabNavigator();
@@ -41,12 +41,12 @@ const Footer = () => {
     >
       <Tab.Screen
         name={workout}
-        component={Workout}
+        component={Workouts}
         options={{ tabBarLabel: t("workouts") }}
       />
       <Tab.Screen
         name={timer}
-        component={Timer}
+        component={Timers}
         options={{ tabBarLabel: t("timers") }}
       />
       <Tab.Screen
