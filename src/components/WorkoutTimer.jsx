@@ -8,7 +8,7 @@ const WorkoutTimer = ({ workout }) => {
     <>
       <ScrollView style={styles.subContainer}>
         <View>
-          <Text styles={styles.title}>{name}</Text>
+          <Text style={styles.title}>{name}</Text>
         </View>
       </ScrollView>
     </>
