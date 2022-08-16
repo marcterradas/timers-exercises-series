@@ -1,14 +1,17 @@
 import { React } from "react";
-import { View, Text } from "react-native";
+import { ScrollView, View, Text } from "react-native";
+import styles from "../styles/timers.styles";
 
 const WorkoutTimer = ({ workout }) => {
   const [name, exercices] = workout;
-  console.log(name);
-  console.log(exercices);
   return (
-    <View>
-      <Text>todo workout timer element ...</Text>
-    </View>
+    <>
+      <ScrollView style={styles.subContainer}>
+        <View>
+          <Text styles={styles.title}>{name}</Text>
+        </View>
+      </ScrollView>
+    </>
   );
 };
 

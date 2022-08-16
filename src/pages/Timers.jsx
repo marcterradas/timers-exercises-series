@@ -12,11 +12,10 @@ import styles from "../styles/timers.styles";
 const TimerScreen = () => {
   const { t } = useTranslation();
   const [workoutsElements, setWorkoutsElements] = useState([]);
-  const [selectedWorkout, setSelectedWorkout] = useState(false);
+  const [selectedWorkout, setSelectedWorkout] = useState("");
 
   async function openWorkout(index) {
     const workouts = await getWorkouts();
-
     let [id, workout] = workouts[index];
     workout = Object.values(JSON.parse(workout));
     setSelectedWorkout(workout);
@@ -47,7 +46,11 @@ const TimerScreen = () => {
   useEffect(loadWorkouts, []);
 
   if (selectedWorkout) {
-    return <WorkoutTimer workout={selectedWorkout} />;
+    return (
+      <View style={styles.container}>
+        <WorkoutTimer workout={selectedWorkout} />
+      </View>
+    );
   }
 
   return (
