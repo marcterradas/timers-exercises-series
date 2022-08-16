@@ -11,8 +11,8 @@ const Tab = createBottomTabNavigator();
 
 const Footer = () => {
   const { t } = useTranslation();
-  let workout = t("workout");
-  let timer = t("timer");
+  let workout = t("workouts");
+  let timer = t("timers");
   let settings = t("settings");
 
   return (
@@ -42,12 +42,12 @@ const Footer = () => {
       <Tab.Screen
         name={workout}
         component={Workout}
-        options={{ tabBarLabel: t("workout") }}
+        options={{ tabBarLabel: t("workouts") }}
       />
       <Tab.Screen
         name={timer}
         component={Timer}
-        options={{ tabBarLabel: t("timer") }}
+        options={{ tabBarLabel: t("timers") }}
       />
       <Tab.Screen
         name={settings}

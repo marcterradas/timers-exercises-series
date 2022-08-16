@@ -2,8 +2,8 @@
   "resources": {
     "en": {
       "translation": {
-        "workout": "Workouts",
-        "timer": "Timer",
+        "workouts": "Workouts",
+        "timers": "Timers",
         "settings": "Settings",
         "change_language": "Change Language",
         "new_workout": "New workout",
@@ -25,8 +25,8 @@
     },
     "es": {
       "translation": {
-        "workout": "Entrenamientos",
-        "timer": "Temporizador",
+        "workouts": "Entrenamientos",
+        "timers": "Temporizadores",
         "settings": "Configuración",
         "change_language": "Cambiar Idioma",
         "new_workout": "Nuevo entrenamiento",
@@ -49,8 +49,8 @@
     },
     "cat": {
       "translation": {
-        "workout": "Entrenaments",
-        "timer": "Temporitzador",
+        "workouts": "Entrenaments",
+        "timers": "Temporitzadors",
         "settings": "Configuració",
         "change_language": "Canviar idioma",
         "new_workout": "Nou entrenament",
