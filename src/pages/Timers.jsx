@@ -7,7 +7,7 @@ import WorkoutTimer from "../components/WorkoutTimer";
 
 import { getWorkouts } from "../logic/workout";
 
-import styles from "../styles/workout.styles";
+import styles from "../styles/timers.styles";
 
 const TimerScreen = () => {
   const { t } = useTranslation();
