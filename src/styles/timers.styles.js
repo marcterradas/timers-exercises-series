@@ -19,6 +19,11 @@ const styles = StyleSheet.create({
     fontSize: 20,
     marginBottom: 20,
   },
+  actionContainer: {
+    padding: 20,
+    alignSelf: "flex-end",
+    flexDirection: "row",
+  },
 });
 
 export default styles;
