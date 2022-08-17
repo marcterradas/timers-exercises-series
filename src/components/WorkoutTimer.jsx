@@ -4,12 +4,13 @@ import { useTranslation } from "react-i18next";
 
 import styles from "../styles/timers.styles";
 
+import ExerciceTimer from "./ExerciceTimer";
 import ActionButton from "./ActionButton";
 
 const WorkoutTimer = ({ workout, callBack }) => {
   const { t } = useTranslation();
   const [name, exercices] = workout;
-  const [currentExercice, setCurrentExercice] = useState(false);
+  const [currentExercice, setCurrentExercice] = useState(<ExerciceTimer />);
 
   function getNextExercice() {
     const exercice = exercices.shift();
@@ -19,7 +20,7 @@ const WorkoutTimer = ({ workout, callBack }) => {
       return false;
     }
 
-    setCurrentExercice(exercice);
+    setCurrentExercice(<ExerciceTimer exercice={exercice} />);
   }
 
   useEffect(getNextExercice, []);
@@ -30,6 +31,7 @@ const WorkoutTimer = ({ workout, callBack }) => {
         <View>
           <Text style={styles.title}>{name}</Text>
         </View>
+        <View style={styles.container}>{currentExercice}</View>
       </ScrollView>
       <View style={styles.actionContainer}>
         <ActionButton
