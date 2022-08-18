@@ -18,4 +18,10 @@ test("minutesToSeconds", () => {
   expect(minutesToSeconds(null)).toBe(0);
   expect(minutesToSeconds(false)).toBe(0);
   expect(minutesToSeconds(undefined)).toBe(0);
+  expect(minutesToSeconds("")).toBe(0);
+  expect(minutesToSeconds("00:00")).toBe(0);
+  expect(minutesToSeconds("01:00")).toBe(60);
+  expect(minutesToSeconds("01:30")).toBe(90);
+  expect(minutesToSeconds("00:30")).toBe(30);
+  expect(minutesToSeconds("00:59")).toBe(59);
 });
