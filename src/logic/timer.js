@@ -21,9 +21,7 @@ export function secondsToMinutes(seconds = 0) {
  * @returns integer seconds
  */
 export function minutesToSeconds(time = "00:00") {
-  if (!time) {
-    time = "00:00";
-  }
+  if (!time) time = "00:00";
 
   let [minutes, seconds] = time.split(":");
 
@@ -31,4 +29,14 @@ export function minutesToSeconds(time = "00:00") {
   seconds = parseInt(seconds);
 
   return minutes * 60 + seconds;
+}
+
+export function substractOneSecond(time = "") {
+  let seconds = minutesToSeconds(time);
+
+  seconds -= 1;
+  if (seconds < 0) seconds = 0;
+
+  time = secondsToMinutes(seconds);
+  return time;
 }
