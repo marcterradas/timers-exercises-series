@@ -1,5 +1,9 @@
 import { expect, test } from "vitest";
-import { secondsToMinutes, minutesToSeconds } from "../src/logic/timer";
+import {
+  secondsToMinutes,
+  minutesToSeconds,
+  substractOneSecond,
+} from "../src/logic/timer";
 
 test("secondsToMinutes", () => {
   expect(secondsToMinutes()).toBe("00:00");
@@ -24,4 +28,17 @@ test("minutesToSeconds", () => {
   expect(minutesToSeconds("01:30")).toBe(90);
   expect(minutesToSeconds("00:30")).toBe(30);
   expect(minutesToSeconds("00:59")).toBe(59);
+});
+
+test("substractOneSecond", () => {
+  expect(substractOneSecond()).toBe("00:00");
+  expect(substractOneSecond(null)).toBe("00:00");
+  expect(substractOneSecond(false)).toBe("00:00");
+  expect(substractOneSecond(undefined)).toBe("00:00");
+  expect(substractOneSecond("")).toBe("00:00");
+  expect(substractOneSecond("00:00")).toBe("00:00");
+  expect(substractOneSecond("01:00")).toBe("00:59");
+  expect(substractOneSecond("01:30")).toBe("01:29");
+  expect(substractOneSecond("00:30")).toBe("00:29");
+  expect(substractOneSecond("00:01")).toBe("00:00");
 });
