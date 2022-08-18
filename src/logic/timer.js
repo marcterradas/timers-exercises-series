@@ -21,6 +21,10 @@ export function secondsToMinutes(seconds = 0) {
  * @returns integer seconds
  */
 export function minutesToSeconds(time = "00:00") {
+  if (!time) {
+    time = "00:00";
+  }
+
   let [minutes, seconds] = time.split(":");
 
   minutes = parseInt(minutes);
