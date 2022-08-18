@@ -31,6 +31,11 @@ export function minutesToSeconds(time = "00:00") {
   return minutes * 60 + seconds;
 }
 
+/**
+ * substract one second to time string
+ * @param {string} time
+ * @returns string time
+ */
 export function substractOneSecond(time = "") {
   let seconds = minutesToSeconds(time);
 
