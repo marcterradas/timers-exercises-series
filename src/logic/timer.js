@@ -14,3 +14,17 @@ export function secondsToMinutes(seconds = 0) {
 
   return `${minutes}:${seconds}`;
 }
+
+/**
+ * transform time string to seconds
+ * @param {string} time
+ * @returns integer seconds
+ */
+export function minutesToSeconds(time = "00:00") {
+  let [minutes, seconds] = time.split(":");
+
+  minutes = parseInt(minutes);
+  seconds = parseInt(seconds);
+
+  return minutes * 60 + seconds;
+}
