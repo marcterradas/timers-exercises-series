@@ -12,12 +12,29 @@ import {
 const ExerciceTimer = ({ exercice = {} }) => {
   const { name, repetitions, breakTime } = exercice;
 
-  const [time, setStime] = useState(secondsToMinutes(breakTime));
+  const [time, setTime] = useState(breakTime);
   const [countDown, setCountDown] = useState(false);
 
   function clickTimer() {
     setCountDown(!countDown);
   }
+
+  function calculateTime() {
+    console.log("calculate time ...");
+  }
+
+  function updateTimer() {
+    const seconds = minutesToSeconds(time);
+
+    if (countDown && seconds > 0) {
+      const oneSecond = 1000;
+      const interval = setInterval(calculateTime, oneSecond);
+      return clearInterval(interval);
+    }
+  }
+
+  useEffect(updateTimer, [countDown, time]);
+  useEffect(() => setTime(secondsToMinutes(breakTime)), [breakTime]);
 
   return (
     <TouchableOpacity onPress={clickTimer} style={buttonStyles.bigButton}>
