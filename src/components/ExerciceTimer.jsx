@@ -1,5 +1,7 @@
 import { React, useState } from "react";
-import { View, Text } from "react-native";
+import { TouchableOpacity, Text } from "react-native";
+
+import buttonStyles from "../styles/button.styles";
 
 import {
   secondsToMinutes,
@@ -10,10 +12,15 @@ import {
 const ExerciceTimer = ({ exercice = {} }) => {
   const { name, repetitions, breakTime } = exercice;
   const [time, setStime] = useState(secondsToMinutes(breakTime));
+
+  function handleTimer() {
+    console.log("handle timer ...");
+  }
+
   return (
-    <View>
+    <TouchableOpacity onPress={handleTimer} style={buttonStyles.bigButton}>
       <Text>{time}</Text>
-    </View>
+    </TouchableOpacity>
   );
 };
 
