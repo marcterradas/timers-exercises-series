@@ -19,8 +19,9 @@ const ExerciceTimer = ({ exercice = {} }) => {
     setCountDown(!countDown);
   }
 
-  function calculateTime() {
-    console.log("calculate time ...");
+  function updateTime() {
+    const newTime = substractOneSecond(time);
+    setTime(newTime);
   }
 
   function updateTimer() {
@@ -28,8 +29,8 @@ const ExerciceTimer = ({ exercice = {} }) => {
 
     if (countDown && seconds > 0) {
       const oneSecond = 1000;
-      const interval = setInterval(calculateTime, oneSecond);
-      return clearInterval(interval);
+      const interval = setInterval(updateTime, oneSecond);
+      return () => clearInterval(interval);
     }
   }
 
