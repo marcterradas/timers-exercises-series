@@ -1,5 +1,4 @@
 import { StyleSheet } from "react-native";
-import { COLORS } from "../constants/colors";
 
 const styles = StyleSheet.create({
   container: {
@@ -23,6 +22,10 @@ const styles = StyleSheet.create({
     padding: 20,
     alignSelf: "flex-end",
     flexDirection: "row",
+  },
+  time: {
+    fontWeight: "bold",
+    fontSize: 14,
   },
 });
 
