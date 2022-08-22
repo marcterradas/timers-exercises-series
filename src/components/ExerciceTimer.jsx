@@ -24,6 +24,12 @@ const ExerciceTimer = ({ exercice = {} }) => {
   function updateTime() {
     const newTime = substractOneSecond(time);
     setTime(newTime);
+
+    if (newTime === "00:00") {
+      setRepetition(repetiton + 1);
+      setTime(secondsToMinutes(breakTime));
+      setCountDown(false);
+    }
   }
 
   function updateTimer() {
