@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { COLORS } from "../constants/colors";
 
 const styles = StyleSheet.create({
   container: {
@@ -22,6 +23,14 @@ const styles = StyleSheet.create({
     padding: 20,
     alignSelf: "flex-end",
     flexDirection: "row",
+  },
+  exerciceContainer: {
+    height: 80,
+    padding: 10,
+    borderRadius: 4,
+    borderColor: COLORS.GRAY,
+    backgroundColor: COLORS.BLUE,
+    alignSelf: "stretch",
   },
   time: {
     fontWeight: "bold",

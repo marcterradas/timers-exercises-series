@@ -1,7 +1,6 @@
 import { React, useState, useEffect } from "react";
 import { TouchableOpacity, View, Text } from "react-native";
 
-import buttonStyles from "../styles/button.styles";
 import timerStyles from "../styles/timers.styles";
 
 import {
@@ -46,7 +45,10 @@ const ExerciceTimer = ({ exercice = {} }) => {
   useEffect(() => setTime(secondsToMinutes(breakTime)), [breakTime]);
 
   return (
-    <TouchableOpacity onPress={clickTimer} style={buttonStyles.bigButton}>
+    <TouchableOpacity
+      onPress={clickTimer}
+      style={timerStyles.exerciceContainer}
+    >
       <View>
         <Text>{name}</Text>
         <Text>
