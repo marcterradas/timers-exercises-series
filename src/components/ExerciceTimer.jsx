@@ -1,5 +1,5 @@
 import { React, useState, useEffect } from "react";
-import { TouchableOpacity, Text } from "react-native";
+import { TouchableOpacity, View, Text } from "react-native";
 
 import buttonStyles from "../styles/button.styles";
 import timerStyles from "../styles/timers.styles";
@@ -15,6 +15,7 @@ const ExerciceTimer = ({ exercice = {} }) => {
 
   const [time, setTime] = useState(breakTime);
   const [countDown, setCountDown] = useState(false);
+  const [repetiton, setRepetition] = useState(1);
 
   function clickTimer() {
     setCountDown(!countDown);
@@ -40,7 +41,12 @@ const ExerciceTimer = ({ exercice = {} }) => {
 
   return (
     <TouchableOpacity onPress={clickTimer} style={buttonStyles.bigButton}>
-      <Text>{name}</Text>
+      <View>
+        <Text>{name}</Text>
+        <Text>
+          {repetiton}/{repetitions}
+        </Text>
+      </View>
       <Text style={timerStyles.time}>{time}</Text>
     </TouchableOpacity>
   );
