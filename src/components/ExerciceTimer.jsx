@@ -49,13 +49,19 @@ const ExerciceTimer = ({ exercice = {} }) => {
       onPress={clickTimer}
       style={timerStyles.exerciceContainer}
     >
-      <View>
-        <Text>{name}</Text>
-        <Text>
-          {repetiton}/{repetitions}
-        </Text>
+      <View style={timerStyles.exerciceRowContainer}>
+        <View style={timerStyles.exerciceNameContainer}>
+          <Text>{name}</Text>
+        </View>
+        <View style={timerStyles.exerciceRepetitionsConatiner}>
+          <Text>
+            {repetiton}/{repetitions}
+          </Text>
+        </View>
       </View>
-      <Text style={timerStyles.time}>{time}</Text>
+      <View style={timerStyles.exerciceTimerContainer}>
+        <Text style={timerStyles.time}>{time}</Text>
+      </View>
     </TouchableOpacity>
   );
 };

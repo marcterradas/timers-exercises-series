@@ -32,6 +32,25 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.BLUE,
     alignSelf: "stretch",
   },
+  exerciceRowContainer: {
+    flexDirection: "row",
+  },
+  exerciceNameContainer: {
+    alignSelf: "stretch",
+    alignItems: "flex-start",
+    width: "50%",
+  },
+  exerciceRepetitionsConatiner: {
+    alignSelf: "stretch",
+    alignItems: "flex-end",
+    width: "50%",
+  },
+  exerciceTimerContainer: {
+    paddingTop: 6,
+    alignSelf: "stretch",
+    alignItems: "center",
+    width: "100%",
+  },
   time: {
     fontWeight: "bold",
     fontSize: 14,
