@@ -2,6 +2,7 @@ import { React, useState, useEffect } from "react";
 import { TouchableOpacity, Text } from "react-native";
 
 import buttonStyles from "../styles/button.styles";
+import timerStyles from "../styles/timers.styles";
 
 import {
   secondsToMinutes,
@@ -39,7 +40,8 @@ const ExerciceTimer = ({ exercice = {} }) => {
 
   return (
     <TouchableOpacity onPress={clickTimer} style={buttonStyles.bigButton}>
-      <Text>{time}</Text>
+      <Text>{name}</Text>
+      <Text style={timerStyles.time}>{time}</Text>
     </TouchableOpacity>
   );
 };
