@@ -24,13 +24,16 @@ const ExerciceTimer = ({ exercice = {}, getNextExercice }) => {
     const newTime = substractOneSecond(time);
     setTime(newTime);
 
+    let newRepetition = repetiton;
+
     if (newTime === "00:00") {
-      setRepetition(repetiton + 1);
+      newRepetition++;
+      setRepetition(newRepetition);
       setTime(secondsToMinutes(breakTime));
       setCountDown(false);
     }
 
-    if (repetiton > repetitions) {
+    if (newRepetition > repetitions) {
       setRepetition(1);
       setCountDown(false);
       getNextExercice();
