@@ -31,8 +31,9 @@ const ExerciceTimer = ({ exercice = {}, getNextExercice }) => {
     }
 
     if (repetiton > repetitions) {
+      setRepetition(1);
+      setCountDown(false);
       getNextExercice();
-      return;
     }
   }
 

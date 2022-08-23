@@ -14,18 +14,26 @@ const WorkoutTimer = ({ workout, callBack }) => {
 
   function getNextExercice() {
     const exercice = exercices.shift();
-
     if (typeof exercice === "undefined") {
       callBack();
       return false;
     }
+    return exercice;
+  }
 
+  function renderNextExercice() {
+    setCurrentExercice(<ExerciceTimer />);
+    renderExerciceTimer();
+  }
+
+  function renderExerciceTimer() {
+    const exercice = getNextExercice();
     setCurrentExercice(
-      <ExerciceTimer exercice={exercice} getNextExercice={getNextExercice} />
+      <ExerciceTimer exercice={exercice} getNextExercice={renderNextExercice} />
     );
   }
 
-  useEffect(getNextExercice, []);
+  useEffect(renderExerciceTimer, []);
 
   return (
     <>
