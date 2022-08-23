@@ -9,7 +9,7 @@ import {
   substractOneSecond,
 } from "../logic/timer.js";
 
-const ExerciceTimer = ({ exercice = {} }) => {
+const ExerciceTimer = ({ exercice = {}, getNextExercice }) => {
   const { name, repetitions, breakTime } = exercice;
 
   const [time, setTime] = useState(breakTime);
@@ -28,6 +28,11 @@ const ExerciceTimer = ({ exercice = {} }) => {
       setRepetition(repetiton + 1);
       setTime(secondsToMinutes(breakTime));
       setCountDown(false);
+    }
+
+    if (repetiton > repetitions) {
+      getNextExercice();
+      return;
     }
   }
 

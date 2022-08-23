@@ -20,7 +20,9 @@ const WorkoutTimer = ({ workout, callBack }) => {
       return false;
     }
 
-    setCurrentExercice(<ExerciceTimer exercice={exercice} />);
+    setCurrentExercice(
+      <ExerciceTimer exercice={exercice} getNextExercice={getNextExercice} />
+    );
   }
 
   useEffect(getNextExercice, []);
