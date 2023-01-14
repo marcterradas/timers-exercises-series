@@ -47,7 +47,9 @@ const TimerScreen = () => {
     setWorkoutsElements(workoutElements);
   }
 
-  useEffect(loadWorkouts, []);
+  useEffect(() => {
+    loadWorkouts();
+  }, []);
 
   if (selectedWorkout) {
     return (
