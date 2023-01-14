@@ -51,6 +51,14 @@ const TimerScreen = ({ navigation }) => {
     loadWorkouts();
   }, []);
 
+  useEffect(() => {
+    const unsubscribe = navigation.addListener("focus", () => {
+      loadWorkouts();
+    });
+
+    return unsubscribe;
+  }, [navigation]);
+
   if (selectedWorkout) {
     return (
       <View style={styles.container}>
