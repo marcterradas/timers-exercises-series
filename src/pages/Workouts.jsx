@@ -23,7 +23,7 @@ const WorkoutScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <WorkoutList changePage={changePage} />
+      <WorkoutList changePage={changePage} navigation={navigation} />
     </View>
   );
 };
