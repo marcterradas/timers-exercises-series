@@ -76,7 +76,9 @@ const WorkoutList = ({ changePage }) => {
     setWorkoutsElements(workoutElements);
   }
 
-  useEffect(loadWorkouts, []);
+  useEffect(() => {
+    loadWorkouts();
+  }, []);
 
   if (showPopup) {
     return (
