@@ -9,7 +9,7 @@ import { getWorkouts } from "../logic/workout";
 
 import styles from "../styles/timers.styles";
 
-const TimerScreen = () => {
+const TimerScreen = ({ navigation }) => {
   const { t } = useTranslation();
   const [workoutsElements, setWorkoutsElements] = useState([]);
   const [selectedWorkout, setSelectedWorkout] = useState(false);

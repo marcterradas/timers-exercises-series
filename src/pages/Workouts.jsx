@@ -6,7 +6,7 @@ import WorkoutForm from "../components/WorkoutForm";
 
 import styles from "../styles/workout.styles";
 
-const WorkoutScreen = () => {
+const WorkoutScreen = ({ navigation }) => {
   const [page, setPage] = useState("list");
 
   function changePage() {

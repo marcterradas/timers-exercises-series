@@ -8,7 +8,7 @@ import ActionButton from "../components/ActionButton";
 import { clear } from "../logic/workout";
 import styles from "../styles/settings.styles";
 
-const SettingsScreen = () => {
+const SettingsScreen = ({ navigation }) => {
   const { t } = useTranslation();
 
   return (
