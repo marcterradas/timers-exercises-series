@@ -62,7 +62,7 @@ const WorkoutList = ({ changePage, navigation }) => {
       let [id, workout] = workouts[index];
       workout = Object.values(JSON.parse(workout));
 
-      const [title, exercices] = workout;
+      const [title] = workout;
       const workoutElement = (
         <WorkoutElement
           key={id}
