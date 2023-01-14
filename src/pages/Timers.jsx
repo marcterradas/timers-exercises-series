@@ -16,13 +16,9 @@ const TimerScreen = ({ navigation }) => {
 
   async function openWorkout(index) {
     const workouts = await getWorkouts();
-    let [id, workout] = workouts[index];
+    let [, workout] = workouts[index];
     workout = Object.values(JSON.parse(workout));
     setSelectedWorkout(workout);
-  }
-
-  function closeWorkout() {
-    setSelectedWorkout(false);
   }
 
   async function loadWorkouts() {
@@ -33,7 +29,7 @@ const TimerScreen = ({ navigation }) => {
       let [id, workout] = workouts[index];
       workout = Object.values(JSON.parse(workout));
 
-      const [title, exercices] = workout;
+      const [title] = workout;
       const workoutElement = (
         <WorkoutElement
           key={id}
