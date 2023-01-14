@@ -10,7 +10,7 @@ import WorkoutForm from "./WorkoutForm";
 
 import styles from "../styles/workout.styles";
 
-const WorkoutList = ({ changePage }) => {
+const WorkoutList = ({ changePage, navigation }) => {
   const { t } = useTranslation();
   const [workoutsElements, setWorkoutsElements] = useState([]);
   const [showPopup, setShowPopup] = useState(false);
@@ -79,6 +79,14 @@ const WorkoutList = ({ changePage }) => {
   useEffect(() => {
     loadWorkouts();
   }, []);
+
+  useEffect(() => {
+    const unsubscribe = navigation.addListener("focus", () => {
+      loadWorkouts();
+    });
+
+    return unsubscribe;
+  }, [navigation]);
 
   if (showPopup) {
     return (
