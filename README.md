@@ -19,3 +19,9 @@ npm run android
 ```
 npm run test
 ```
+
+### Build apk
+
+```
+eas build -p android --profile preview
+```
